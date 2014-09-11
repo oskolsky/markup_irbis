@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru-RU">
+  <head>
+    <title>Irbis</title>
+    <meta charset='utf-8'>
+    <meta content='width=device-width' name='viewport'>
+    <meta content='telephone=no' name='format-detection'>
+    <meta content='' name='description'>
+    <meta content='' name='keywords'>
+    <link href='/humans.txt' rel='author'>
+    <link href='/favicon.ico' rel='icon'>
+    <link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon'>
+    <link href='/apple-touch-icon-57x57-precomposed.png' rel='apple-touch-icon' sizes='57x57'>
+    <link href='/apple-touch-icon-72x72-precomposed.png' rel='apple-touch-icon' sizes='72x72'>
+    <link href='/apple-touch-icon-114x114-precomposed.png' rel='apple-touch-icon' sizes='114x114'>
+    <link href='/apple-touch-icon-144x144-precomposed.png' rel='apple-touch-icon' sizes='144x144'>
+    <link href='/assets/stylesheets/application.css' rel='stylesheet'>
+    <!-- build:javascripts -->
+    <script src='/assets/javascripts/vendor/modernizr-latest.js'></script>
+    <script src='/assets/javascripts/vendor/jquery-2.1.1.js'></script>
+    <script src='/assets/javascripts/vendor/jquery-ui.js'></script>
+    <script src='/assets/javascripts/vendor/underscore.js'></script>
+    <script src='/assets/javascripts/vendor/backbone.js'></script>
+    <script src='/assets/javascripts/vendor/selectordie.js'></script>
+    <script src='/assets/javascripts/vendor/accounting.js'></script>
+    <script src='/assets/javascripts/vendor/jquery.arcticmodal.js'></script>
+    <script src='/assets/javascripts/vendor/owl.carousel.js'></script>
+    <script src='/assets/javascripts/vendor/imagesloaded.pkgd.js'></script>
+    <script src='/assets/javascripts/vendor/masonry.pkgd.js'></script>
+    <script src='/assets/javascripts/config.js'></script>
+    <script src='/assets/javascripts/jquery.extensions.js'></script>
+    <script src='/assets/javascripts/helpers.js'></script>
+    <script src='/assets/javascripts/forms.js'></script>
+    <script src='/assets/javascripts/feed.js'></script>
+    <script src='/assets/javascripts/application.js'></script>
+    <script src='/assets/javascripts/project.js'></script>
+    <!-- endbuild -->
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+  </head>
+  <body class="page" id="page">
+    <style>
+      .alert-js{display:none;padding:2rem 0;background:#b22222;color:#fff;text-align:center}.alert-js h1{font-size:2rem;line-height:1.5}.no-js .alert-js{display:block}
+    </style>
+    <div class='alert-js' role='alert'><h1>У вас отключен JavaScript.</h1></div>
+    <!--[if lt IE 9]>
+      <style>
+        .alert-ie{padding:20px 0;background:#4682b4;color:#fff;text-align:center}.alert-ie h1{font-size:20px;line-height:1.5}.alert-ie a{color:#fff;text-decoration:underline}.alert-ie a:hover{text-decoration:none}
+      </style>
+      <div class='alert-ie' role='alert'><h1>Использование устаревшего браузера<br>повышает риск взлома вашего компьютера.<br><a href='http://browsehappy.com/' rel='nofollow' target='_blank'>Обновите свой браузер!</a></h1></div>
+    <![endif]-->
+    <nav class='nav nav__touch hidden-desktop' role='navigation'>
+      <ul class='menu'>
+        <li class='menu_i'>
+          <a class='menu_i_a' data-scroll='true' href='#services'>Услуги</a>
+        </li>
+        <li class='menu_i'>
+          <a class='menu_i_a' data-scroll='true' href='#works'>Портфолио</a>
+        </li>
+        <li class='menu_i'>
+          <a class='menu_i_a' data-scroll='true' href='#contacts'>Контакты</a>
+        </li>
+        <li class='menu_i'>
+          <a class='menu_i_a menu_i_a__btn' data-dialog='open' data-url='/data/dialogs/feedback.html' href='/dialogs/feedback.html'>Заказать сайт</a>
+        </li>
+        <li class='menu_i'>
+          <a class='menu_i_a' href='/blog.html'>Блог</a>
+        </li>
+      </ul>
+    </nav>
+    <header class='header' id='header' role='banner'>
+      <div class='grid'><div class='grid_i grid_i__desktop-grid-2-12 grid_i__tablet-grid-2-6 grid_i__phone-grid-1-2 va-m'>
+          <a href='/'>
+            <img alt='Irbis' class='va-t' height='32' src='/assets/images/logo.svg' width='138'>
+          </a>
+        </div><div class='grid_i grid_i__desktop-grid-8-12 grid_i__tablet-grid-2-6 grid_i__phone-grid-1-2 va-m'>
+          <nav class='nav' role='navigation'>
+            <a class='nav-toggle js-nav-toggle hidden-desktop' href='#'>
+              <i class='ico ico__24 ico__nav'></i>
+            </a>
+            <ul class='menu visible-desktop'>
+              <li class='menu_i'>
+                <a class='menu_i_a' data-scroll='true' href='#services'>Услуги</a>
+              </li>
+              <li class='menu_i'>
+                <a class='menu_i_a' data-scroll='true' href='#works'>Портфолио</a>
+              </li>
+              <li class='menu_i'>
+                <a class='menu_i_a' data-scroll='true' href='#contacts'>Контакты</a>
+              </li>
+              <li class='menu_i'>
+                <a class='menu_i_a menu_i_a__btn' data-dialog='open' data-url='/data/dialogs/feedback.html' href='/dialogs/feedback.html'>Заказать сайт</a>
+              </li>
+              <li class='menu_i'>
+                <a class='menu_i_a' href='/blog.html'>Блог</a>
+              </li>
+            </ul>
+          </nav>
+        </div><div class='grid_i grid_i__desktop-grid-2-12 grid_i__tablet-grid-2-6 va-m hidden-phone'>
+          <p class='delta tx-major tx-right'>+7 812 385-58-25</p>
+        </div></div>
+    </header>
+    <main class="main" id="main" role="main">
+      <section aria-label="Landing" class="section section__landing" role="region">
+        <div class="ctn">
+          <div class="landing">
+            <h1 class="landing_t">
+              Разработка и&nbsp;поддержка
+              <br>
+              интернет-систем
+            </h1>
+            <p>с&nbsp;2009 года на&nbsp;Российском рынке</p>
+            <img alt="1C Bitrix" class="landing_awward" height="240" src="/assets/images/awward.svg" width="200">
+          </div>
+        </div>
+      </section>
+      <section aria-label="Promo" class="section section__promo" role="region">
+        <div class="ctn">
+          <div class="promo"><div class="promo_i">
+              <div class="promo_i_inner"><div class="promo_i_img promo_i_img__basket">
+                  <img alt="Разработка интернет-магазинов" height="156" src="/assets/images/blank.gif" width="210">
+                </div><div class="promo_i_tx">
+                  <h2 class="mb-1">Разработка интернет-магазинов</h2>
+                  <p>Функциональные, большие, удобные, быстрые и&nbsp;привлекательные для покупателей, прибыльные для владельцев.</p>
+                </div></div>
+            </div><div class="promo_i">
+              <div class="promo_i_inner"><div class="promo_i_img promo_i_img__notebook hidden-desktop">
+                  <img alt="Разработка корпоративных сайтов" height="156" src="/assets/images/blank.gif" width="210">
+                </div><div class="promo_i_tx">
+                  <h2 class="mb-1">Разработка корпоративных сайтов</h2>
+                  <p>Максимально удобные, функциональные, работающие на&nbsp;формирование позитивного имиджа, лояльность клиентов, увеличение прибыли и&nbsp;известности.</p>
+                </div><div class="promo_i_img promo_i_img__notebook visible-desktop">
+                  <img alt="Разработка корпоративных сайтов" height="156" src="/assets/images/blank.gif" width="210">
+                </div></div>
+            </div><div class="promo_i">
+              <div class="promo_i_inner"><div class="promo_i_img promo_i_img__browser">
+                  <img alt="Разработка порталов" height="156" src="/assets/images/blank.gif" width="210">
+                </div><div class="promo_i_tx">
+                  <h2 class="mb-1">Разработка порталов</h2>
+                  <p>Функциональные, большие, удобные, быстрые и&nbsp;привлекательные для покупателей, прибыльные для владельцев.</p>
+                </div></div>
+            </div></div>
+        </div>
+      </section>
+      <section aria-label="Services" class="section section__services" id="services" role="region">
+        <div class="ctn">
+          <article class="tx-center mb-4">
+            <header>
+              <h2 class="mb-1">Всё, что может Вам понадобиться</h2>
+            </header>
+            <p class="tx-voice">Мы&nbsp;умеем не&nbsp;только делать сайты, но&nbsp;и&nbsp;создавать системы по&nbsp;производству прибыли.</p>
+            <p class="tx-voice">С&nbsp;правильно построенной системой ваш бизнес начнет приносить постоянный доход.</p>
+          </article>
+          <div class="grid"><div class="grid_i grid_i__desktop-grid-3-12 grid_i__desktop-prefix-2-12 grid_i__tablet-grid-1-3 grid_i__phone-grid-1-1">
+              <div class="tx-center">
+                <img alt="" class="va-t mb-2" height="44" src="/assets/images/icon_gear.svg" width="44">
+                <h4>Интеграция<br>в&nbsp;E-commerce</h4>
+              </div>
+            </div><div class="grid_i grid_i__desktop-grid-2-12 grid_i__tablet-grid-1-3 grid_i__phone-grid-1-1">
+              <div class="tx-center">
+                <img alt="" class="va-t mb-2" height="44" src="/assets/images/icon_text.svg" width="44">
+                <h4>Техническое<br>сопровождение</h4>
+              </div>
+            </div><div class="grid_i grid_i__desktop-grid-3-12 grid_i__tablet-grid-1-3 grid_i__phone-grid-1-1">
+              <div class="tx-center">
+                <img alt="" class="va-t mb-2" height="44" src="/assets/images/icon_search.svg" width="44">
+                <h4>Поисковая<br>оптимизация</h4>
+              </div>
+            </div></div>
+        </div>
+      </section>
+      <section aria-label="Works" class="section section__works" id="works" role="region">
+        <div class="works feed js-feed"><figure class="works_i">
+            <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+              <img alt="" class="works_i_preview" src="/assets/images/work-preview-1.jpg" width="100%">
+            </a>
+            <figcaption class="works_i_caption">
+              <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+                <h3 class="works_i_caption_t">Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;</h3>
+              </a>
+            </figcaption>
+          </figure><figure class="works_i">
+            <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+              <img alt="" class="works_i_preview" src="/assets/images/work-preview-2.jpg" width="100%">
+            </a>
+            <figcaption class="works_i_caption">
+              <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+                <h3 class="works_i_caption_t">Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;</h3>
+              </a>
+            </figcaption>
+          </figure><figure class="works_i">
+            <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+              <img alt="" class="works_i_preview" src="/assets/images/work-preview-3.jpg" width="100%">
+            </a>
+            <figcaption class="works_i_caption">
+              <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+                <h3 class="works_i_caption_t">Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;</h3>
+              </a>
+            </figcaption>
+          </figure><figure class="works_i">
+            <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+              <img alt="" class="works_i_preview" src="/assets/images/work-preview-4.jpg" width="100%">
+            </a>
+            <figcaption class="works_i_caption">
+              <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+                <h3 class="works_i_caption_t">Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;</h3>
+              </a>
+            </figcaption>
+          </figure><figure class="works_i">
+            <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+              <img alt="" class="works_i_preview" src="/assets/images/work-preview-5.jpg" width="100%">
+            </a>
+            <figcaption class="works_i_caption">
+              <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+                <h3 class="works_i_caption_t">Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;</h3>
+              </a>
+            </figcaption>
+          </figure><figure class="works_i">
+            <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+              <img alt="" class="works_i_preview" src="/assets/images/work-preview-6.jpg" width="100%">
+            </a>
+            <figcaption class="works_i_caption">
+              <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+                <h3 class="works_i_caption_t">Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;</h3>
+              </a>
+            </figcaption>
+          </figure><figure class="works_i">
+            <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+              <img alt="" class="works_i_preview" src="/assets/images/work-preview-1.jpg" width="100%">
+            </a>
+            <figcaption class="works_i_caption">
+              <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+                <h3 class="works_i_caption_t">Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;</h3>
+              </a>
+            </figcaption>
+          </figure><figure class="works_i">
+            <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+              <img alt="" class="works_i_preview" src="/assets/images/work-preview-2.jpg" width="100%">
+            </a>
+            <figcaption class="works_i_caption">
+              <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+                <h3 class="works_i_caption_t">Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;</h3>
+              </a>
+            </figcaption>
+          </figure><figure class="works_i">
+            <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+              <img alt="" class="works_i_preview" src="/assets/images/work-preview-3.jpg" width="100%">
+            </a>
+            <figcaption class="works_i_caption">
+              <a data-dialog="open" data-url="/data/dialogs/works_show.html" href="/dialogs/works_show.html">
+                <h3 class="works_i_caption_t">Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;</h3>
+              </a>
+            </figcaption>
+          </figure></div>
+        <div class="feed-load js-feed-load">
+          <form class="form js-form">
+            <div class="form_el form_btn js-form_el">
+              <p class="form_btn_inner">Показать ещё работы</p>
+              <button class="form_el_tag form_btn_tag">Показать ещё работы</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <!-- %section.section.section__blog{role: "region", aria: {label: "Blog"}} -->
+      <!-- .ctn -->
+      <!-- .grid -->
+      <!-- .grid_i.grid_i__desktop-grid-8-12.grid_i__desktop-prefix-2-12.grid_i__tablet-grid-1-1.grid_i__phone-grid-1-1> -->
+      <!-- %h2.tx-center.mb-3 Новое в блоге -->
+      <!-- .owl-carousel -->
+      <!-- - 1.upto(2) do -->
+      <!-- %article.blog-preview -->
+      <!-- %header.mb-1 -->
+      <!-- %p.tx-muted 12 сентября -->
+      <!-- %p -->
+      <!-- %b Новая карточка товара для магазина реСтор -->
+      <!-- %p.tx-voice К&nbsp;выходу в&nbsp;релиз готовится новая версия детальной карточки товара для проекта re-store.ru. Новая карточка решает множество проблем и&nbsp;упрощает заказ товара и&nbsp;его бронирование в&nbsp;магазине. -->
+      <!-- %article.blog-preview -->
+      <!-- %header.mb-1 -->
+      <!-- %p.tx-muted 23 мая -->
+      <!-- %p -->
+      <!-- %b Поддержка Экор-Нева -->
+      <!-- %p.tx-voice Взяли на&nbsp;поддержку корпоративный сайт предприятия Экор-Нева, участника научно-производственного холдинга ВМП. На&nbsp;сайте много информации, которую сотрудники нашей студии помогают. -->
+      <section aria-label='Contacts' class='section section__contacts' id='contacts' role='region'>
+        <div class='ctn'>
+          <div class='yandex-map' id='map'></div>
+          <article class='contacts'>
+            <header class='contacts_header'>
+              <h3 class='contacts_header_title'>
+                Мы&nbsp;готовы&nbsp;приехать&nbsp;для&nbsp;встречи
+                <br>
+                в&nbsp;любую&nbsp;точку&nbsp;города
+              </h3>
+            </header>
+            <div class='contacts_body'>
+              <div class='mb-1'>
+                <div class='grid'><div class='grid_i grid_i__desktop-grid-2-6 grid_i__desktop-prefix-1-6 grid_i__tablet-grid-1-2 grid_i__phone-grid-1-2'>
+                    <p class='delta tx-center'>+7 (812) 385-58-25</p>
+                  </div><div class='grid_i grid_i__desktop-grid-2-6 grid_i__desktop-suffix-1-6 grid_i__tablet-grid-1-2 grid_i__phone-grid-1-2'>
+                    <p class='delta tx-center'>info@irbis-web.ru</p>
+                  </div></div>
+              </div>
+              <div class='tx-voice tx-center'>
+                <p>Производственный офис:</p>
+                <p>ул. Кузнецовская, д.&nbsp;21, Санкт-Петербург</p>
+                <p>
+                  <i class='ico ico__16 ico__tw'></i>
+                  @irbisweb_ru
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class='footer' id='footer' role='contentinfo'>
+      <div class='ctn'>
+        <p>&copy;&nbsp;Студия Ирбис, 2009&ndash;2014</p>
+      </div>
+    </footer>
+  </body>
+</html>

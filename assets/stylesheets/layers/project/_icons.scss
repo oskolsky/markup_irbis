@@ -1,0 +1,38 @@
+@include class(ico) {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+//
+// .. 16x16
+//
+@include class(ico__16) {
+  background-image: url(/assets/images/16x16.svg);
+  background-repeat: no-repeat;
+  @include size(16px, 16px);
+}
+@include class(ico__trash) {background-position: 0 0;}
+@include class(ico__trash-hover) {background-position: -16px 0;}
+@include class(ico__attach) {background-position: -32px 0;}
+@include class(ico__attach-hover) {background-position: -48px 0;}
+@include class(ico__tw) {background-position: -64px 0;}
+
+//
+// .. 24x24
+//
+@include class(ico__24) {
+  background-image: url(/assets/images/24x24.svg);
+  background-repeat: no-repeat;
+  @include size(24px, 24px);
+}
+@include class(ico__close) {background-position: -144px 0;}
+@include class(ico__close-major) {
+  background-position: -168px 0;
+  a:hover & {@extend .ico__close-major-hover;}
+}
+@include class(ico__close-major-hover) {background-position: -192px 0;}
+@include class(ico__nav) {
+  background-position: -216px 0;
+  a:hover & {@extend .ico__nav-hover;}
+}
+@include class(ico__nav-hover) {background-position: -240px 0;}

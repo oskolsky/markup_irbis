@@ -1,0 +1,42 @@
+!!!
+%html.no-js{lang: "ru-RU"}
+  %head
+    %title Demo / Irbis
+    = Haml::Engine.new(File.read("views/layouts/_head.haml")).render
+    :css
+      .demo{margin-left:6rem}.demo li:not(:last-child){margin-bottom:1rem}.demo ol{counter-reset:list}.demo ol li{position:relative}.demo ol li::before{counter-increment:list;content:counter(list)".";position:absolute;top:0;right:100%;margin-right:.5rem;color:#ccc}
+  
+  %body#page.page
+    = Haml::Engine.new(File.read("views/common/_alerts.haml")).render
+
+    %main#main.main{role: "main"}
+      %section{role: "region", aria: {label: "Demo"}}
+        .pt-8.pb-8
+          .ctn
+            %article
+              %header.mb-4
+                %a{href: "/"}
+                  %img{src: "/assets/images/logo.svg", alt: "Irbis"}
+
+              .grid
+                .grid_i.grid_i__desktop-grid-1-2.grid_i__tablet-grid-1-2.grid_i__phone-grid-1-1>
+                  %nav.demo
+                    %ol
+                      %li 
+                        %a{href: "/ui.html"} UI
+                      %li
+                        %a{href: "/index.html"} Index
+                      %li
+                        %a{href: "/blog.html"} Blog
+                .grid_i.grid_i__desktop-grid-1-2.grid_i__tablet-grid-1-2.grid_i__phone-grid-1-1>
+                  %nav.demo
+                    %ol
+                      %li 
+                        %a.a-pseudo{href: "/dialogs/feedback.html", data: {dialog: "open", url: "/data/dialogs/feedback.html"}} 
+                          %span.a-pseudo_inner Feedback
+                      %li 
+                        %a.a-pseudo{href: "/dialogs/feedback_complete.html", data: {dialog: "open", url: "/data/dialogs/feedback_complete.html"}} 
+                          %span.a-pseudo_inner Feedback complete
+                      %li 
+                        %a.a-pseudo{href: "/dialogs/works_show.html", data: {dialog: "open", url: "/data/dialogs/works_show.html"}} 
+                          %span.a-pseudo_inner Works show

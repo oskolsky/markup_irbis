@@ -1,0 +1,119 @@
+%form-el-tag-stretch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include size(100%, 100%);
+}
+
+textarea {resize: none;}
+
+
+
+//****************************************************************************************************
+//
+// .. ELEMENTS
+//
+//****************************************************************************************************
+.form_el {
+  position: relative;
+  display: inline-block;
+  @include prefixes(box-sizing, border-box);
+}
+
+.form_el__block {
+  display: block;
+  width: 100%;
+}
+  .form_el_tag {@include prefixes(box-sizing, border-box);}
+
+  .form_el_inner {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+//
+// .. Label
+//
+.form_label__checkbox {
+  position: relative;
+  .form_checkbox,
+  .form_radio {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    @include prefixes(transform, translateY(-50%));
+  }
+}
+
+//
+// .. Button
+//
+.form_btn_tag {
+  font-size: 0;
+  cursor: inherit;
+  @extend %form-el-tag-stretch;
+}
+
+//
+// .. Text, textarea
+//
+.form_tx_tag,
+.form_textarea_tag {
+  padding: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  @extend %form-el-tag-stretch;
+}
+
+//
+// .. Checkbox, radio
+//
+.form_checkbox[data-checked="true"]::after,
+.form_radio[data-checked="true"]::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  @include prefixes(transform, translate(-50%, -50%));
+}
+  .form_checkbox_tag,
+  .form_radio_tag {
+    z-index: 2;
+    cursor: inherit;
+    opacity: 0;
+    @extend %form-el-tag-stretch;
+  }
+
+//
+// .. Select
+//
+.form_select::after {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  @include prefixes(transform, translateY(-50%));
+}
+  .form_select_tag {
+    z-index: 2;
+    cursor: inherit;
+    opacity: 0;
+    @extend %form-el-tag-stretch;
+  }
+
+//
+// .. File
+//
+.form_file::after {
+  position: absolute;
+  top: 50%;
+  @include prefixes(transform, translateY(-50%));
+}
+  .form_file_tag {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }  

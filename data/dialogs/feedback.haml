@@ -1,0 +1,8 @@
+%script{src: "/assets/javascripts/dialogs.js"}
+
+.dialog
+  .ctn
+    %a.dialog_close{href: "#", data: {dialog: "close"}}
+      %i.ico.ico__24.ico__close.visible-desktop
+      %i.ico.ico__24.ico__close-major.hidden-desktop
+    = Haml::Engine.new(File.read("views/dialogs/_feedback.haml")).render

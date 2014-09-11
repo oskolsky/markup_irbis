@@ -1,0 +1,165 @@
+.form_row {
+  &:not(:last-child) {margin-bottom: .6rem;}
+}
+
+.form_el {
+  &[disabled] {
+    background: #eee;
+    opacity: .5;
+  }
+  &[data-valid="true"] {
+    border-color: fade-out(green, .3);
+    background: fade-out(green, .9);
+    color: green;
+  }
+  &[data-valid="false"] {
+    border-color: fade-out(red, .3);
+    background: fade-out(red, .9);
+    color: red;
+  }
+}
+
+  @if $focus-style == true {
+    .form_el__focus {@extend %focus-style;}
+  }
+  
+  .form_el_tag[disabled] {cursor: no-drop;}
+
+//
+// .. Label
+//
+.form_label__checkbox {
+  cursor: pointer;
+  .form_label_inner {margin-left: 2.4rem;}
+}
+
+//
+// .. Legend
+//
+.form_legend {@extend %delta;}
+
+//
+// .. Button
+//
+.form_btn {
+  font-size: 1.2rem;
+  font-weight: 700;
+  height: 4.4rem;
+  padding: 0 2.2rem;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  color: $link-color;
+  border: 2px solid $link-color;
+  border-radius: .3rem;
+  background-color: #fff;
+  @include prefixes(transition, all .11s ease);
+  &:not([disabled]):hover,
+  &:not([disabled]):active {
+    color: #fff;
+    border-color: $major-color;
+    background-color: $major-color;
+  }
+}
+
+
+  .form_btn_inner {line-height: 4.4rem;}
+
+//
+// .. Text
+//
+.form_tx {
+  padding: 0 2rem;
+  height: 6.4rem;
+  border: 1px solid #c8c9c3;
+  border-radius: .3rem;
+  background: #fff;
+}
+
+//
+// .. Textarea
+//
+.form_textarea {
+  padding: 2rem;
+  height: 22.5rem;
+  border: 1px solid #c8c9c3;
+  border-radius: .3rem;
+  background: #fff;
+}
+
+//
+// .. Checkbox
+//
+.form_checkbox {
+  border: 1px solid #ccc;
+  border-radius: .3rem;
+  background: #fff;
+  cursor: pointer;
+  @include size(1.6rem, 1.6rem);
+  &[data-checked="true"]::after {
+    background: #666;
+    border-radius: .1rem;
+    content: "";
+    @include size(.6rem, .6rem);
+  }
+}
+
+//
+// .. Radio
+//
+.form_radio {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  @include size(1.6rem, 1.6rem);
+  &[data-checked="true"]::after {
+    background: #666;
+    border-radius: 50%;
+    content: "";
+    @include size(.6rem, .6rem);
+  }
+}
+
+//
+// .. Select
+//
+.form_select {
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: .3rem;
+  background: #fff;
+  cursor: pointer;
+  &::after {
+    right: 1rem;
+    color: #ccc;
+    content: "\f0d7";
+    font-family: FontAwesome;
+  }
+}
+  .form_select_inner {
+    margin: 0 2.8rem 0 .75rem;
+    line-height: 2.8rem;
+  }
+
+//
+// .. File
+//
+.form_file {
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: .3rem;
+  background: #fff;
+  cursor: pointer;
+  &[disabled] {cursor: no-drop;}
+  &::after {
+    right: .6rem;
+    color: #ccc;
+    content: "\f07c";
+    font-family: FontAwesome;
+  }
+}
+  .form_file_inner {
+    margin: 0 2.8rem 0 .75rem;
+    line-height: 2.8rem;
+  }

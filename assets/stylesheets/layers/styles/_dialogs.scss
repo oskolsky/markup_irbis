@@ -1,0 +1,11 @@
+@include class(dialog) {
+  background-color: #fff;  
+  @include mq(phone)   {position: relative;}
+  @include mq(tablet)  {position: relative;}
+  @include mq(desktop) {}
+}
+
+.dialog_close {
+  top: 2rem;
+  right: 2rem;
+}
