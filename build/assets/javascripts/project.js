@@ -65,7 +65,11 @@ $(function() {
   // .. RESIZE
   //
   //****************************************************************************************************
-  $(window).smartresize(function() {});
+  $(window).smartresize(function() {
+    $('.nav.nav__touch').hide(0, function() {
+      $('#header').css({top: 0});
+    });
+  });
   
 });
 
