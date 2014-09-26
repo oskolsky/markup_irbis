@@ -6,6 +6,50 @@
 $(function() {
 
   //
+  // .. Paralax background on home page
+  //
+  $('#parallax').parallax({
+    'elements': [
+      {
+        'selector': '.parallax_layer.parallax_layer__bg',
+        'properties': {
+          'x': {
+            'background-position-x': {
+              'initial': 0,
+              'multiplier': 0.02,
+              'invert': true
+            }
+          }
+        }
+      },
+      {
+        'selector': '.parallax_layer.parallax_layer__title',
+        'properties': {
+          'x': {
+            'left': {
+              'initial': 0,
+              'multiplier': 0.03,
+              'invert': true
+            }
+          }
+        }
+      },
+      {
+        'selector': '.parallax_layer.parallax_layer__awward',
+        'properties': {
+          'x': {
+            'left': {
+              'initial': 0,
+              'multiplier': 0.01,
+              'invert': true
+            }
+          }
+        }
+      }
+    ]
+  });
+
+  //
   // .. Navigation click
   //
   $('.js-nav-toggle').on('click', function() {
@@ -66,9 +110,11 @@ $(function() {
   //
   //****************************************************************************************************
   $(window).smartresize(function() {
+    
     $('.nav.nav__touch').hide(0, function() {
       $('#header').css({top: 0});
     });
+
   });
   
 });
@@ -80,4 +126,6 @@ $(function() {
 // .. LOAD
 //
 //****************************************************************************************************
-$(window).load(function() {});
+$(window).load(function() {
+
+});

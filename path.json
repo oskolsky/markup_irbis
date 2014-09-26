@@ -37,6 +37,7 @@
       "./assets/javascripts/vendor/owl.carousel.js",
       "./assets/javascripts/vendor/imagesloaded.pkgd.js",
       "./assets/javascripts/vendor/masonry.pkgd.js",
+      "./assets/javascripts/vendor/jquery.parallax-0.2-min.js",
       "./assets/javascripts/config.js",
       "./assets/javascripts/jquery.extensions.js",
       "./assets/javascripts/helpers.js",
