@@ -7048,7 +7048,7 @@ a:hover .ico__nav {
   text-transform: uppercase; }
 
 .section__landing {
-  height: 840px; }
+  height: 820px; }
 
 .parallax {
   position: relative;
@@ -7063,11 +7063,7 @@ a:hover .ico__nav {
   top: -100px;
   right: -100px;
   bottom: -100px;
-  left: -100px;
-  background-image: url(/assets/images/bg2x.jpg);
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: cover; }
+  left: -100px; }
 
 .parallax_layer__title {
   z-index: 3;
@@ -7094,7 +7090,8 @@ a:hover .ico__nav {
   background-color: #0b5ed8; }
 
 .section__services {
-  padding: 15rem 0; }
+  padding: 15rem 0;
+  background-color: white; }
 
 .section__contacts {
   position: relative;
@@ -7305,4 +7302,5 @@ a:hover .ico__nav {
   line-height: 6rem;
   height: 6rem;
   text-align: center;
-  color: #c8c9c3; }
+  color: #c8c9c3;
+  background-color: white; }

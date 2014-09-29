@@ -8,46 +8,7 @@ $(function() {
   //
   // .. Paralax background on home page
   //
-  $('#parallax').parallax({
-    'elements': [
-      {
-        'selector': '.parallax_layer.parallax_layer__bg',
-        'properties': {
-          'x': {
-            'background-position-x': {
-              'initial': 0,
-              'multiplier': 0.02,
-              'invert': true
-            }
-          }
-        }
-      },
-      {
-        'selector': '.parallax_layer.parallax_layer__title',
-        'properties': {
-          'x': {
-            'left': {
-              'initial': 0,
-              'multiplier': 0.03,
-              'invert': true
-            }
-          }
-        }
-      },
-      {
-        'selector': '.parallax_layer.parallax_layer__awward',
-        'properties': {
-          'x': {
-            'left': {
-              'initial': 0,
-              'multiplier': 0.01,
-              'invert': true
-            }
-          }
-        }
-      }
-    ]
-  });
+  $('.movie').mb_YTPlayer();
 
   //
   // .. Navigation click
