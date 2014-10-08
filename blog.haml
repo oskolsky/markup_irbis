@@ -1,10 +1,23 @@
 !!!
 %html.no-js{lang: "ru-RU"}
   %head
-    %title Irbis
+    %title Blog / Irbis
     = Haml::Engine.new(File.read("views/layouts/_head.haml")).render
-    %script{src: "//api-maps.yandex.ru/2.1/?lang=ru_RU"}
-  
+    %script{src: "http://maps.api.2gis.ru/2.0/loader.js", data: {id: "dgLoader"}}
+    :javascript
+
+      var map;
+
+      DG.then(function() {
+        map = DG.map('map', {
+          center: [59.87, 30.31],
+          zoom: 13,
+          fullscreenControl: false,
+          zoomControl: false,
+          scrollWheelZoom: false
+        });
+      });
+
   %body#page.page
     = Haml::Engine.new(File.read("views/common/_alerts.haml")).render
     = Haml::Engine.new(File.read("views/layouts/_header.haml")).render
@@ -12,19 +25,18 @@
     %main#main.main.pt-8{role: "main"}
 
       %section.section{role: "region", aria: {label: "Blog"}}
-        .ctn
-          .pt-14
-            %h1.section_t.mb-14 Блог компании
+        .ctn          
+          %h1.section_t.pt-14.pb-14 Блог компании
           .blog
             .blog_i
               .blog_i_inner
                 %article.blog_i_article
                   %header.blog_i_header
                     %p.blog_i_data 12 сентября
-                    %h2.blog_i_t
-                      %a{href: "/dialogs/works_show.html", data: {dialog: "open", url: "/data/dialogs/works_show.html"}} Новая карточка товара для магазина реСтор
+                    %h2.blog_i_t Новая карточка товара для магазина реСтор
                   %div.cnt.blog_i_tx
                     %p Мы закончили разработку интерфейса для новой карточки товара, которая будет запущена уже совсем скоро. Разработчиками студии была проделана большая работа по модификации модулей обработки заказов. 
+                    %img{src: "/assets/images/content-1.png", alt: ""}
                     %p Теперь покупателю не&nbsp;нужно проходить всю процедуру оформления заказа через корзину, если у&nbsp;него есть желание оформить покупку в&nbsp;кредит или забронировать ее&nbsp;в&nbsp;магазине.
                     %p
                       Следите за&nbsp;обновлениями сайта 
@@ -40,10 +52,9 @@
                 %article.blog_i_article
                   %header.blog_i_header
                     %p.blog_i_data 23 мая
-                    %h2.blog_i_t
-                      %a{href: "/dialogs/works_show.html", data: {dialog: "open", url: "/data/dialogs/works_show.html"}}  Поддержка Экор-Нева
+                    %h2.blog_i_t Поддержка Экор-Нева
                   %div.cnt.blog_i_tx
-                    %p Взяли на&nbsp;поддержку корпоративный сайт предприятия Экор-Нева, участника аучно-производственного холдинга ВМП.
+                    %p Взяли на&nbsp;поддержку корпорaтивный сайт предприятия Экор-Нева, участника холдинга ВМП.
                     %p Считаем, что сайт обладает большим спектром информации по продукции компании, но нуждается в значительной переработке. Хотим со временем показать руководству предприятия, что сайты могут не только делиться информацией, но и приносить прибыль.
                     %p
                       Сайт: 
@@ -57,8 +68,7 @@
                 %article.blog_i_article
                   %header.blog_i_header
                     %p.blog_i_data 22 мая
-                    %h2.blog_i_t
-                      %a{href: "/dialogs/works_show.html", data: {dialog: "open", url: "/data/dialogs/works_show.html"}}  Интернет-магазин для Носимо
+                    %h2.blog_i_t Интернет-магазин для Носимо
                   %div.cnt.blog_i_tx
                     %p Мы&nbsp;начали разработку интернет-магазина для ЗАО &laquo;Носимо&raquo;&nbsp;&mdash; сети фирменных магазинов Samsung по&nbsp;всей России. Новый сайт будет объединять в&nbsp;себе фирменный стиль Samsung и&nbsp;новейшие технологии веб разработки последних лет.
                     %p Компания &laquo;Носимо&raquo; создана в&nbsp;марте 2005&nbsp;года. Основной вид деятельности&nbsp;&mdash; торговля цифровой техникой и&nbsp;мобильными устройствами, создание и&nbsp;развитие фирменной монобрендовой сети Samsung, официальным дистрибьютором которой является ЗАО &laquo;Носимо&raquo;. В&nbsp;настоящее время сеть фирменных магазинов Samsung насчитывает сорок специализированных по&nbsp;концепции салонов Samsung и&nbsp;предлагающих передовые услуги.
@@ -71,8 +81,7 @@
                 %article.blog_i_article
                   %header.blog_i_header
                     %p.blog_i_data 22 мая
-                    %h2.blog_i_t
-                      %a{href: "/dialogs/works_show.html", data: {dialog: "open", url: "/data/dialogs/works_show.html"}} Элитная недвижимость Москвы
+                    %h2.blog_i_t Элитная недвижимость Москвы
                   %div.cnt.blog_i_tx
                     %p Студия закончила разработку сайта, посвященного продаже элитной недвижимости в&nbsp;Москве. На&nbsp;данный момент сайт проходит стадию заполнения информацией. Следите за&nbsp;обновлениями в&nbsp;портфолио.
                   %footer.blog_i_footer
@@ -80,6 +89,6 @@
                       (function(){if(window.pluso)if(typeof window.pluso.start=="function")return;if(window.ifpluso==undefined){window.ifpluso=1;var e=document,t=e.createElement("script"),n="getElementsByTagName";t.type="text/javascript";t.charset="UTF-8";t.async=true;t.src=("https:"==window.location.protocol?"https":"http")+"://share.pluso.ru/pluso-like.js";var r=e[n]("body")[0];r.appendChild(t)}})()
                     .pluso{data: {background: "transparent", options: "medium,square,line,horizontal,theme=04", services: "vkontakte,facebook,twitter", user: "1938787731"}}
 
-      = Haml::Engine.new(File.read("views/common/_contacts.haml")).render
+      = Haml::Engine.new(File.read("views/home/_contacts.haml")).render
 
     = Haml::Engine.new(File.read("views/layouts/_footer.haml")).render

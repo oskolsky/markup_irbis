@@ -1,12 +1,3 @@
-%form-el-tag-stretch {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  @include size(100%, 100%);
-}
-
 textarea {resize: none;}
 
 
@@ -19,15 +10,24 @@ textarea {resize: none;}
 .form_el {
   position: relative;
   display: inline-block;
+  vertical-align: top;
   @include prefixes(box-sizing, border-box);
+  .grid_i > & {@extend .form_el__block;}
 }
-
 .form_el__block {
   display: block;
   width: 100%;
 }
-  .form_el_tag {@include prefixes(box-sizing, border-box);}
-
+  .form_el_tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    @include prefixes(box-sizing, border-box);
+  }
   .form_el_inner {
     overflow: hidden;
     white-space: nowrap;
@@ -36,10 +36,9 @@ textarea {resize: none;}
 //
 // .. Label
 //
-.form_label__checkbox {
+.form_label__el {
   position: relative;
-  .form_checkbox,
-  .form_radio {
+  > .form_el {
     position: absolute;
     top: 50%;
     left: 0;
@@ -53,21 +52,21 @@ textarea {resize: none;}
 .form_btn_tag {
   font-size: 0;
   cursor: inherit;
-  @extend %form-el-tag-stretch;
 }
 
 //
 // .. Text, textarea
 //
-.form_tx_tag,
-.form_textarea_tag {
-  padding: inherit;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  @extend %form-el-tag-stretch;
-}
+.form_tx,
+.form_textarea {min-width: 12rem;}
+  .form_tx_tag,
+  .form_textarea_tag {
+    padding: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
 
 //
 // .. Checkbox, radio
@@ -85,7 +84,19 @@ textarea {resize: none;}
     z-index: 2;
     cursor: inherit;
     opacity: 0;
-    @extend %form-el-tag-stretch;
+  }
+
+//
+// .. File
+//
+.form_file::after {
+  position: absolute;
+  top: 50%;
+  @include prefixes(transform, translateY(-50%));
+}
+  .form_file_tag {
+    z-index: -1; 
+    opacity: 0;
   }
 
 //
@@ -101,19 +112,4 @@ textarea {resize: none;}
     z-index: 2;
     cursor: inherit;
     opacity: 0;
-    @extend %form-el-tag-stretch;
-  }
-
-//
-// .. File
-//
-.form_file::after {
-  position: absolute;
-  top: 50%;
-  @include prefixes(transform, translateY(-50%));
-}
-  .form_file_tag {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
   }  

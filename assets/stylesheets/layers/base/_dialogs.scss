@@ -1,8 +1,1 @@
-@include class(dialog) {
-  overflow: hidden;
-  @include prefixes(box-sizing, border-box);
-}
-
-.dialog_close {
-  position: absolute;
-}
+@include class(dialog) {@include prefixes(box-sizing, border-box);}

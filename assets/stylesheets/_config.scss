@@ -75,7 +75,7 @@ $ctn-responsive-max-width-list: (639px, 939px, 1180px);
 //
 // .. Html
 //
-$root-font-size-list: (62.5%, 62.5%, 62.5%);
+$root-font-size-list: (52.5%, 57.5%, 62.5%);
 
 //
 // .. Body
@@ -142,7 +142,7 @@ $content-factor: 3;
 $content-link-style: false; // .. true / false
 $content-link-color: #4380da;
 $content-link-color-hover: #4380da;
-$content-link-color-active: darken($content-link-color-hover, 10%);
+$content-link-color-active: #4380da;
 
 //
 // .. Text
@@ -167,8 +167,3 @@ $tx-xl-line-height:  160%;
 
 $tx-xxl-font-size:   130%;
 $tx-xxl-line-height: 160%;
-
-//
-// .. Rub
-//
-$rub: arial; // .. all / arial / georgia / tahoma / times / verdana

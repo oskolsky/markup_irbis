@@ -9,8 +9,8 @@
 $.arcticmodal('setDefault', {
   overlay: {
     css: {
-      backgroundColor: '#0b5ed8',
-      opacity: 0.95
+      backgroundColor: '#000',
+      opacity: 0.66
     }
   },
   openEffect: {
@@ -65,10 +65,10 @@ function formatMoney() {
       c.format = '%v';
     } else if ($(this).hasClass('format-money__usd')) {
       c.symbol = '$';
-      c.format = '%s%v';
+      c.format = '%s %v';
     } else if ($(this).hasClass('format-money__eur')) {
       c.symbol = '€';
-      c.format = '%s%v';
+      c.format = '%s %v';
     }
 
     var
@@ -94,33 +94,21 @@ function formatMoney() {
 // .. Open dialog
 //
 $(document).on('click touchstart', '[data-dialog="open"]', function() {
-  // if (window.matchMedia) {
-    // if (matchMedia('all and (min-width: ' + config.matchMedia.desktop.minWidth + 'px)').matches) {
-      var url = $(this).data('url');
-    
-      $.arcticmodal('close');
-
-      $.arcticmodal({
-        type: 'ajax',
-        url: url
-      });
-      
-      return false;
-    // }
-  // }
+  var url = $(this).data('url');
+  $.arcticmodal('close');
+  $.arcticmodal({
+    type: 'ajax',
+    url: url
+  });
+  return false;
 });
 
 //
 // .. Close dialog
 //
 $(document).on('click touchstart', '[data-dialog="close"]', function() {
-  // if (window.matchMedia) {
-    // if (matchMedia('all and (min-width: ' + config.matchMedia.desktop.minWidth + 'px)').matches) {
-      $.arcticmodal('close');
-
-      return false;
-    // }
-  // }
+  $.arcticmodal('close');
+  return false;
 });
 
 
@@ -137,7 +125,7 @@ $(function() {
   // .. DOUBLE HOVER
   //
   //****************************************************************************************************
-  doubleHover('a.double-hover', 'hover');
+  doubleHover('.double-hover', 'hover');
 
 
 
@@ -148,24 +136,6 @@ $(function() {
   //
   //****************************************************************************************************
   $('.js-form').customForm();
-
-
-
-  //****************************************************************************************************
-  //
-  // .. SCROLL TO
-  //
-  //****************************************************************************************************
-  $('a[data-scroll="true"]').on('click touchstart', function() {
-    var
-      anchor = $(this).attr('href'),
-      offset = $(this).data('offset') || 0,
-      destination = $(anchor).offset().top - offset;
-    
-    $('html, body').animate({scrollTop: destination}, 500);
-    
-    return false;
-  });
 
 
 
@@ -186,7 +156,7 @@ $(function() {
   //****************************************************************************************************
   $(window).smartresize(function() {
 
-    // $('#header').stickyHeader();
+    $('#header').stickyHeader();
     $('#footer').stickyFooter();
 
   });
@@ -202,7 +172,7 @@ $(function() {
 //****************************************************************************************************
 $(window).load(function() {
 
-  // $('#header').stickyHeader();
+  $('#header').stickyHeader();
   $('#footer').stickyFooter();
 
 });

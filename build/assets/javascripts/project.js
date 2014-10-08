@@ -6,52 +6,29 @@
 $(function() {
 
   //
-  // .. Paralax background on home page
+  // .. Contacts change background
   //
-  $('.movie').mb_YTPlayer();
-
-  //
-  // .. Navigation click
-  //
-  $('.js-nav-toggle').on('click', function() {
-    var $el = $('.nav.nav__touch');
-    if ($el.is(':hidden')) {
-      $el.show(0, function() {
-        $('#header').css({top: 352});
-      });
-    } else {
-      $el.hide(0, function() {
-        $('#header').css({top: 0});
-      });
-    }
-    return false;
-  });
-
-  //
-  // .. Yandex map for contacts block on index page
-  //
-  ymaps.ready(init);
-
-  function init() {
-    var myMap = new ymaps.Map('map', {
-      center: [59.87, 30.31],
-      zoom: 13,
-      controls: [false]
-    });
-  }
+  $('.contacts').find('.contacts_header').css({backgroundImage: 'url(/assets/images/place' + getRandomInt(1, 6) + '_2x.png)'});
 
   //
   // .. OWL Carousel init
   //
   $('.owl-carousel').owlCarousel({
-    responsive:{
-        0:{
-            items:1
-        },
-        939:{
-            items:2
-        }
-    }
+      loop: true,
+      margin: 10,
+      responsiveClass: true,
+      responsive: {
+          0: {
+              items: 1,
+              nav: true,
+              navText: false
+          },
+          939: {
+              items: 2,
+              nav: true,
+              navText: false
+          }
+      }
   });
 
 
@@ -70,13 +47,7 @@ $(function() {
   // .. RESIZE
   //
   //****************************************************************************************************
-  $(window).smartresize(function() {
-    
-    $('.nav.nav__touch').hide(0, function() {
-      $('#header').css({top: 0});
-    });
-
-  });
+  $(window).smartresize(function() {});
   
 });
 
@@ -87,6 +58,18 @@ $(function() {
 // .. LOAD
 //
 //****************************************************************************************************
-$(window).load(function() {
+$(window).load(function() {});
 
-});
+
+
+//****************************************************************************************************
+//
+// .. FUNCTION
+//
+//****************************************************************************************************
+//
+// .. Get random
+//
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}

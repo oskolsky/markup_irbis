@@ -31,7 +31,7 @@
   del {text-decoration: line-through;}
   ins {
     padding: 0 .3em;
-    background: #ff9;
+    background-color: #ff9;
     text-decoration: none;
   }
 
@@ -40,7 +40,7 @@
   //
   mark {
     padding: 0 .3em;
-    background: #ff9;
+    background-color: #ff9;
     font: {
       weight: 700;
       style: italic;
@@ -99,12 +99,14 @@
   // .. Blockquote
   //
   blockquote {
-    padding: #{$content-factor - .1}rem #{$content-factor}rem;
-    border: 1px solid #eee;
+    padding: #{$content-factor * .75 - .1}rem #{$content-factor}rem;
+    background: #eee;
+    border: 1px solid #ccc;
     font: {
       style: italic;
       size: 130%;
     }
+    line-height: 160%;
   }
 
   //
@@ -160,51 +162,24 @@
   // .. Figure
   //
   figure {
-    position: relative;
-    padding: 8rem 0;    
-    &::before {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      right: -500rem;
-      bottom: 0;
-      left: -500rem;
-      content: '';
-      background-color: #f2f6fa;
-    }
-    img {
-      position: relative;
-      z-index: 2;
-      margin-bottom: 0 !important;
-    }
+    > img {margin-bottom: #{$content-factor / 2}rem !important;}
     > figcaption {
-      font-style: italic;
       color: #999;
+      font-style: italic;
     }
+  } 
+
+  //
+  // .. Image
+  //
+  img {
+    display: block;
   }
 
   //
-  // .. Images
+  // .. Paragraph
   //
-  img {display: block;}
-
-  //
-  // .. Paragraphs
-  //
-  p {
-    @extend %cf;
-    > img {
-      float: left;
-      margin-right: #{$content-factor}rem;
-      @if $grid == "responsive" {
-        @include mq(phone) {
-          float: none;
-          margin-right: 0;
-          margin-bottom: #{$content-factor / 2}rem;
-        }
-      }
-    }
-  }
+  p {}
 
   //
   // .. Pre > code
@@ -212,7 +187,7 @@
   pre {
     counter-reset: list;
     padding: #{$content-factor - .1}rem #{$content-factor}rem #{$content-factor - .1}rem #{$content-factor * 3}rem;
-    background: #eee;
+    background-color: #eee;
     border: 1px dotted #ccc;
     white-space: normal;
     @include prefixes(overflow-x, hidden);
@@ -247,7 +222,7 @@
       font-style: italic;
     }
     th {
-      background: #ddd;
+      background-color: #ddd;
       text-align: left;
     }
     th,
@@ -255,7 +230,7 @@
       padding-bottom: #{($content-factor / 2) - .1}rem;
       border-bottom: 1px solid #ccc;
     }
-    tfoot td {background: #eee;}
+    tfoot td {background-color: #eee;}
   }
 
 }

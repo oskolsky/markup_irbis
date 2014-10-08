@@ -9,8 +9,8 @@
   @include class(alpha) {
     font: {
       family: $h-font-family;
-      weight: nth($h1-font-weight-list, $list);
       size: nth($h1-font-size-list, $list); 
+      weight: nth($h1-font-weight-list, $list);
     }
     line-height: nth($h1-line-height-list, $list);
     letter-spacing: .3rem;
@@ -75,7 +75,7 @@ html {
 }
 
 body {
-  background: $base-bg;
+  background-color: $base-bg;
   color: $base-color;
   font: {
     weight: $base-font-weight;
@@ -84,9 +84,9 @@ body {
   @if $grid == "fixed" {min-width: $ctn-fixed-width + $ctn-padding * 2;}
   @if $grid == "fluid" {min-width: $ctn-fluid-min-width + $ctn-padding * 2;}
   @if $grid == "responsive" {
-    @include mq(phone)   {min-width: $ctn-responsive-min-width-list(1);}
-    @include mq(tablet)  {min-width: $ctn-responsive-min-width-list(2);}
-    @include mq(desktop) {min-width: $ctn-responsive-min-width-list(3);}
+    @include mq(phone)   {min-width: nth($ctn-responsive-min-width-list, 1);}
+    @include mq(tablet)  {min-width: nth($ctn-responsive-min-width-list, 2);}
+    @include mq(desktop) {min-width: nth($ctn-responsive-min-width-list, 3);}
   }
 }
 
@@ -138,7 +138,7 @@ h6 {@extend %zeta;}
 //
 .va-bl {vertical-align: baseline;}
 .va-t  {vertical-align: top;}
-.va-m  {vertical-align: middle !important;}
+.va-m  {vertical-align: middle;}
 .va-b  {vertical-align: bottom;}
 
 
@@ -148,6 +148,14 @@ h6 {@extend %zeta;}
 // .. HELPERS
 //
 //****************************************************************************************************
+//
+// .. Background
+//
+.bg-major {background-color: $major-color;}
+.bg-minor {background-color: $minor-color;}
+.bg-voice {background-color: $voice-color;}
+.bg-muted {background-color: $muted-color;}
+
 //
 // .. Currency
 //
@@ -178,10 +186,6 @@ h6 {@extend %zeta;}
   font-size: $tx-s-font-size;
   line-height: $tx-s-line-height;
 }
-@include class(tx-m) {
-  font-size: $tx-m-font-size;
-  line-height: $tx-m-line-height;
-}
 @include class(tx-l) {
   font-size: $tx-l-font-size;
   line-height: $tx-l-line-height;
@@ -195,9 +199,6 @@ h6 {@extend %zeta;}
   line-height: $tx-xxl-line-height;
 }
 
-//
-// .. System fonts
-//
 @include class(tx-sys) {
   font-size: 1.2rem;
   font-weight: 700;
@@ -205,7 +206,6 @@ h6 {@extend %zeta;}
   text-transform: uppercase;
   letter-spacing: .1rem;
 }
-
 
 .tx-i {font-style: italic;}
 
@@ -234,4 +234,4 @@ h6 {@extend %zeta;}
 // .. SILENT
 //
 //****************************************************************************************************
-%focus-style {box-shadow: 0 0 .1rem .1rem rgba(41,128,185,.66);}
+%focus-style {box-shadow: 0 0 .1rem .1rem rgba(41,128,185,.66) !important;}

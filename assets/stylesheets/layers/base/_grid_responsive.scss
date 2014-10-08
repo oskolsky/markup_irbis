@@ -37,7 +37,7 @@
       @include grid-responsive("phone", "suffix", "margin-right", 0);
     }
 
-    @include class(grid_collapse) {
+    @include class(grid__collapse) {
       @include grid-responsive("phone", "grid", "width", 0);
       @include grid-responsive("phone", "prefix", "margin-left", 0);
       @include grid-responsive("phone", "suffix", "margin-right", 0);
@@ -54,7 +54,7 @@
       @include grid-responsive("tablet", "suffix", "margin-right", 0);
     }
 
-    @include class(grid_collapse) {
+    @include class(grid__collapse) {
       @include grid-responsive("tablet", "grid", "width", 0);
       @include grid-responsive("tablet", "prefix", "margin-left", 0);
       @include grid-responsive("tablet", "suffix", "margin-right", 0);
@@ -71,7 +71,7 @@
       @include grid-responsive("desktop", "suffix", "margin-right", 0);
     }
 
-    @include class(grid_collapse) {
+    @include class(grid__collapse) {
       @include grid-responsive("desktop", "grid", "width", 0);
       @include grid-responsive("desktop", "prefix", "margin-left", 0);
       @include grid-responsive("desktop", "suffix", "margin-right", 0);

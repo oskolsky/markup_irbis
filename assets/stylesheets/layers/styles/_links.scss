@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6,
 //****************************************************************************************************
 @if $link-style == nn or $link-style == uu {
   a:not(.a-pseudo),
-  .a-link {@include prefixes(transition, all .11s ease);}
+  .a-link {@include prefixes(transition, color .33s ease);}
 }
 
 @if $link-style == nn {
@@ -66,13 +66,13 @@ h1, h2, h3, h4, h5, h6,
 
 @if $link-style-pseudo == uu {
   .a-pseudo {
-    @include prefixes(transition, all .11s ease);
+    @include prefixes(transition, color .33s ease);
     &:hover,
     &.hover {
       .a-pseudo_inner {border-bottom-color: $link-color-hover;} 
     }
   }
-    .a-pseudo_inner {@include prefixes(transition, border .11s ease);}
+    .a-pseudo_inner {@include prefixes(transition, border .33s ease);}
 } @else if $link-style-pseudo == un {
   .a-pseudo {
     &:hover,

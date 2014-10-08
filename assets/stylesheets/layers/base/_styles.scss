@@ -6,8 +6,6 @@ img {
   &[height] {max-width: none;}
 }
 
-figure > img {display: block;}
-
 th, td {@include prefixes(box-sizing, border-box);}
 
 

@@ -1,36 +1,85 @@
-.form_row {
-  &:not(:last-child) {margin-bottom: .6rem;}
+button, input, select, textarea {
+  -webkit-border-radius: 0;
+     -webkit-appearance: none;
 }
 
+button, input {
+  &::moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+
+input {
+  &::-ms-clear {display: none;}
+  &[type="search"]::-webkit-search-cancel-button,
+  &[type="search"]::-webkit-search-decoration {-webkit-appearance: none;}
+}
+
+
+
+//****************************************************************************************************
+//
+// .. ELEMENTS
+//
+//****************************************************************************************************
 .form_el {
   &[disabled] {
-    background: #eee;
+    background-color: #eee;
     opacity: .5;
   }
   &[data-valid="true"] {
-    border-color: fade-out(green, .3);
-    background: fade-out(green, .9);
     color: green;
+    &:not(.form_btn) {
+      background-color: fade-out(green, .9);
+      border-color: fade-out(green, .3);
+    }
+    &.form_btn {
+      border-color: fade-out(green, .45);
+      @include linear-gradient(vertical, fade-out(green, .9), fade-out(green, .6));
+      &:active {@include linear-gradient(vertical, fade-out(green, .6), fade-out(green, .9));}
+    }
+    &.form_checkbox,
+    &.form_radio {
+      &::after {background-color: fade-out(green, .3);}
+    }
+    &.form_file,
+    &.form_select {
+      &::after {color: fade-out(green, .3);}
+    }
   }
   &[data-valid="false"] {
-    border-color: fade-out(red, .3);
-    background: fade-out(red, .9);
     color: red;
+    &:not(.form_btn) {
+      background-color: fade-out(red, .9);
+      border-color: fade-out(red, .3);
+    }
+    &.form_btn {
+      border-color: fade-out(red, .45);
+      @include linear-gradient(vertical, fade-out(red, .9), fade-out(red, .6));
+      &:active {@include linear-gradient(vertical, fade-out(red, .6), fade-out(red, .9));}
+    }
+    &.form_checkbox,
+    &.form_radio {
+      &::after {background-color: fade-out(red, .3);}
+    }
+    &.form_file,
+    &.form_select {
+      &::after {color: fade-out(red, .3);}
+    }
   }
 }
-
   @if $focus-style == true {
     .form_el__focus {@extend %focus-style;}
   }
-  
   .form_el_tag[disabled] {cursor: no-drop;}
 
 //
 // .. Label
 //
-.form_label__checkbox {
+.form_label__el {
   cursor: pointer;
-  .form_label_inner {margin-left: 2.4rem;}
+  > .form_label_inner {margin-left: 2.4rem;}
 }
 
 //
@@ -61,46 +110,46 @@
     background-color: $major-color;
   }
 }
-
-
   .form_btn_inner {line-height: 4.4rem;}
 
 //
 // .. Text
 //
 .form_tx {
-  padding: 0 2rem;
-  height: 6.4rem;
-  border: 1px solid #c8c9c3;
+  padding: 0 .75rem;
+  height: 3rem;
+  border: 1px solid #ccc;
   border-radius: .3rem;
-  background: #fff;
+  background-color: #fff;
 }
 
 //
 // .. Textarea
 //
 .form_textarea {
-  padding: 2rem;
-  height: 22.5rem;
-  border: 1px solid #c8c9c3;
+  padding: .5rem .75rem;
+  height: 9.2rem;
+  border: 1px solid #ccc;
   border-radius: .3rem;
-  background: #fff;
+  background-color: #fff;
 }
 
 //
 // .. Checkbox
 //
 .form_checkbox {
+  width: 1.6rem;
+  height: 1.6rem;
   border: 1px solid #ccc;
   border-radius: .3rem;
-  background: #fff;
+  background-color: #fff;
   cursor: pointer;
-  @include size(1.6rem, 1.6rem);
   &[data-checked="true"]::after {
-    background: #666;
+    width: .6rem;
+    height: .6rem;
+    background-color: #666;
     border-radius: .1rem;
     content: "";
-    @include size(.6rem, .6rem);
   }
 }
 
@@ -108,39 +157,20 @@
 // .. Radio
 //
 .form_radio {
+  width: 1.6rem;
+  height: 1.6rem;
   border: 1px solid #ccc;
   border-radius: 50%;
-  background: #fff;
+  background-color: #fff;
   cursor: pointer;
-  @include size(1.6rem, 1.6rem);
   &[data-checked="true"]::after {
-    background: #666;
+    width: .6rem;
+    height: .6rem;
+    background-color: #666;
     border-radius: 50%;
     content: "";
-    @include size(.6rem, .6rem);
   }
 }
-
-//
-// .. Select
-//
-.form_select {
-  height: 3rem;
-  border: 1px solid #ccc;
-  border-radius: .3rem;
-  background: #fff;
-  cursor: pointer;
-  &::after {
-    right: 1rem;
-    color: #ccc;
-    content: "\f0d7";
-    font-family: FontAwesome;
-  }
-}
-  .form_select_inner {
-    margin: 0 2.8rem 0 .75rem;
-    line-height: 2.8rem;
-  }
 
 //
 // .. File
@@ -149,7 +179,7 @@
   height: 3rem;
   border: 1px solid #ccc;
   border-radius: .3rem;
-  background: #fff;
+  background-color: #fff;
   cursor: pointer;
   &[disabled] {cursor: no-drop;}
   &::after {
@@ -160,6 +190,27 @@
   }
 }
   .form_file_inner {
+    margin: 0 2.8rem 0 .75rem;
+    line-height: 2.8rem;
+  }
+
+//
+// .. Select
+//
+.form_select {
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: .3rem;
+  background-color: #fff;
+  cursor: pointer;
+  &::after {
+    right: 1rem;
+    color: #ccc;
+    content: "\f0d7";
+    font-family: FontAwesome;
+  }
+}
+  .form_select_inner {
     margin: 0 2.8rem 0 .75rem;
     line-height: 2.8rem;
   }

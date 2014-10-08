@@ -7,32 +7,59 @@
 // .. 16x16
 //
 @include class(ico__16) {
-  background-image: url(/assets/images/16x16.svg);
+  width: 16px;
+  height: 16px;
+  background-image: image-url("16x16.svg");
   background-repeat: no-repeat;
-  @include size(16px, 16px);
 }
-@include class(ico__trash) {background-position: 0 0;}
-@include class(ico__trash-hover) {background-position: -16px 0;}
-@include class(ico__attach) {background-position: -32px 0;}
+@include class(ico__trash)        {background-position: 0 0;}
+@include class(ico__trash-hover)  {background-position: -16px 0;}
+@include class(ico__attach)       {background-position: -32px 0;}
 @include class(ico__attach-hover) {background-position: -48px 0;}
-@include class(ico__tw) {background-position: -64px 0;}
+@include class(ico__tw)           {background-position: -64px 0;}
 
 //
 // .. 24x24
 //
 @include class(ico__24) {
-  background-image: url(/assets/images/24x24.svg);
+  width: 24px;
+  height: 24px;
+  background-image: image-url("24x24.svg");
   background-repeat: no-repeat;
-  @include size(24px, 24px);
 }
+
+//
+// .. Close
+//
 @include class(ico__close) {background-position: -144px 0;}
 @include class(ico__close-major) {
   background-position: -168px 0;
   a:hover & {@extend .ico__close-major-hover;}
 }
 @include class(ico__close-major-hover) {background-position: -192px 0;}
+
+//
+// .. Nav
+//
 @include class(ico__nav) {
   background-position: -216px 0;
   a:hover & {@extend .ico__nav-hover;}
 }
 @include class(ico__nav-hover) {background-position: -240px 0;}
+
+//
+// .. Arrow
+//
+@include class(ico__arrow-left) {background-position: 0 0;}
+@include class(ico__arrow-left-major) {
+  background-position: -24px 0;
+  a:hover & {@extend .ico__arrow-left-hover;}
+}
+@include class(ico__arrow-left-hover) {background-position: -48px 0;}
+
+@include class(ico__arrow-right) {background-position: -72px 0;}
+@include class(ico__arrow-right-major) {
+  background-position: -96px 0;
+  a:hover & {@extend .ico__arrow-right-hover;}
+}
+@include class(ico__arrow-right-hover) {background-position: -120px 0;}

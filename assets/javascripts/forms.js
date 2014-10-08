@@ -215,11 +215,13 @@
 
   var
     refreshElements = function(selector, type) {
-      this.find(selector).add(this.filter(selector)).each(function() {handler(this, type).refresh();});
+      this.find(selector).add(this.filter(selector)).each(function() {
+        handler(this, type).refresh();
+      });
     },
     methods = {
       init: function() {
-        this.find('input:reset').click(function() {
+        this.find('[type="reset"]').click(function() {
           if (this.form) {
             this.form.reset();
             $(this.form).customForm('reset');
@@ -234,19 +236,21 @@
           var 
             r = refreshElements.bind($(this));
 
-          r('button', 'button');
-          r('input[type="button"]', 'button');
-          r('input[type="reset"]', 'button');
-          r('input[type="submit"]', 'button');
+          r('[type="button"]', 'button');
+          r('[type="reset"]', 'button');
+          r('[type="submit"]', 'button');
+          
           r('input[type="text"]', 'text');
           r('input[type="password"]', 'text');
           r('input[type="email"]', 'text');
           r('input[type="tel"]', 'text');
-          r('textarea', 'textarea');
+          
           r('input[type="checkbox"]', 'checkbox');
           r('input[type="radio"]', 'radio');
-          r('select', 'select');
           r('input[type="file"]', 'file');
+          
+          r('select', 'select');
+          r('textarea', 'textarea');
         });
       },
 
