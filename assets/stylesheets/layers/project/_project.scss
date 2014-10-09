@@ -142,7 +142,7 @@
 // .. 1C Bitrix
 //
 .section__bitrix {
-  padding: 8rem 0 6rem;
+  padding: 8rem 0;
   background-color: #f2f6fa;
 }
 
@@ -283,7 +283,7 @@
 //****************************************************************************************************
 .bitrix {
   @include mq(desktop) {
-    background-image: image-url('1C.png');  
+    background-image: image-url('1C.png');
     background-repeat: no-repeat;
     background-position: center;
   }
