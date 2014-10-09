@@ -514,6 +514,13 @@
             margin: 0 auto;
           }
         }
+        .blog_i_more {
+          display: none;         
+        }
+        .blog_i_readmore {
+          display: inline-block;
+          margin-top: 3rem;
+        }
         .blog_i_footer {
           padding-top: 2.5rem;
         }

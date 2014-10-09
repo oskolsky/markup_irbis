@@ -62,6 +62,21 @@ $(function() {
       }
   });
 
+  //
+  // .. Blog read more
+  //
+  $('.blog_i').find('.blog_i_readmore').on('click', function() {
+    var $el = $(this).closest('.blog_i').find('.blog_i_more');
+    if ($el.is(':hidden')) {
+      $el.slideDown();
+      $(this).text('Скрыть');
+    } else {
+      $el.slideUp();
+      $(this).text('Показать полностью...');
+    }
+    return false;
+  });
+
 
 
   //****************************************************************************************************
