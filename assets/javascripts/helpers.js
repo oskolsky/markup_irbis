@@ -125,45 +125,6 @@ $(function() {
 
 //****************************************************************************************************
 //
-// .. STICKY HEADER
-//
-//****************************************************************************************************
-$.fn.stickyHeader = function() {
-  if (this.length) {
-    var
-      $header = this,
-      headerOuterHeight = $header.outerHeight(),
-      headerPositionTop = $header.position().top,
-      headerOffsetTop = $header.data('offset-top'),
-      windowScrollTop = $(window).scrollTop();
-        
-    if ($header.length) {
-      $header.data('offset-top', $header.offset().top);
-    }
-
-    if (windowScrollTop > headerPositionTop) {
-      $header.addClass('header__sticky');
-    }
-
-    $(window).scroll(function() {
-      windowScrollTop = $(window).scrollTop();
-      headerOffsetTop = $header.data('offset-top');
-
-      if (windowScrollTop > headerOffsetTop) {
-        $header.addClass('header__sticky');
-      } else {
-        $header.removeClass('header__sticky');
-      }
-    });
-
-    return this;
-  }
-};
-
-
-
-//****************************************************************************************************
-//
 // .. STICKY FOOTER
 //
 //****************************************************************************************************

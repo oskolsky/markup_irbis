@@ -3,24 +3,50 @@
   vertical-align: middle;
 }
 
+//****************************************************************************************************
 //
 // .. 16x16
 //
+//****************************************************************************************************
 @include class(ico__16) {
   width: 16px;
   height: 16px;
   background-image: image-url("16x16.svg");
   background-repeat: no-repeat;
 }
-@include class(ico__trash)        {background-position: 0 0;}
-@include class(ico__trash-hover)  {background-position: -16px 0;}
-@include class(ico__attach)       {background-position: -32px 0;}
-@include class(ico__attach-hover) {background-position: -48px 0;}
-@include class(ico__tw)           {background-position: -64px 0;}
 
+//
+// .. Trash
+//
+@include class(ico__trash) {
+  background-position: 0 0;
+  &:hover,
+  a:hover & {background-position: -16px 0;}
+}
+
+//
+// .. Attach
+//
+@include class(ico__attach) {
+  background-position: -32px 0;
+  &:hover,
+  a:hover & {background-position: -48px 0;}
+}
+
+//
+// .. Twitter
+//
+@include class(ico__tw) {
+  background-position: -64px 0;
+}
+
+
+
+//****************************************************************************************************
 //
 // .. 24x24
 //
+//****************************************************************************************************
 @include class(ico__24) {
   width: 24px;
   height: 24px;
@@ -31,35 +57,35 @@
 //
 // .. Close
 //
-@include class(ico__close) {background-position: -144px 0;}
-@include class(ico__close-major) {
+@include class(ico__close) {
   background-position: -168px 0;
-  a:hover & {@extend .ico__close-major-hover;}
+  &:hover,
+  a:hover & {background-position: -192px 0;}
 }
-@include class(ico__close-major-hover) {background-position: -192px 0;}
 
 //
 // .. Nav
 //
 @include class(ico__nav) {
   background-position: -216px 0;
-  a:hover & {@extend .ico__nav-hover;}
+  &:hover,
+  a:hover & {background-position: -240px 0;}
 }
-@include class(ico__nav-hover) {background-position: -240px 0;}
 
 //
-// .. Arrow
+// .. Arrow left
 //
-@include class(ico__arrow-left) {background-position: 0 0;}
-@include class(ico__arrow-left-major) {
+@include class(ico__arrow-left) {
   background-position: -24px 0;
-  a:hover & {@extend .ico__arrow-left-hover;}
+  &:hover,
+  a:hover & {background-position: -48px 0;}
 }
-@include class(ico__arrow-left-hover) {background-position: -48px 0;}
 
-@include class(ico__arrow-right) {background-position: -72px 0;}
-@include class(ico__arrow-right-major) {
+//
+// .. Arrow right
+//
+@include class(ico__arrow-right) {
   background-position: -96px 0;
-  a:hover & {@extend .ico__arrow-right-hover;}
+  &:hover,
+  a:hover & {background-position: -120px 0;}
 }
-@include class(ico__arrow-right-hover) {background-position: -120px 0;}

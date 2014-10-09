@@ -4,14 +4,6 @@
 }
 
 
-//****************************************************************************************************
-//
-// .. DEBAG
-//
-//****************************************************************************************************
-.dbg {background-color: red;}
-
-
 
 //****************************************************************************************************
 //
@@ -34,6 +26,29 @@
     left: 0;
     z-index: 999;
     background-color: $base-bg;
+  }
+
+  //
+  // .. An on-demand sticky header
+  // .. https://github.com/markgoodyear/headhesive.js/tree/master
+  //
+  //
+  // .. Cloned elem class
+  //
+  .headhesive {
+
+  }
+  //
+  // .. Stick class
+  //
+  .headhesive__stick {
+
+  }
+  //
+  // .. Unstick class
+  //
+  .headhesive__unstick {
+
   }
 
 
@@ -388,13 +403,11 @@
         }
         .owl-prev {
           left: -8rem;
-          @extend %ico__arrow-left-major;
-          &:hover {@extend %ico__arrow-left-hover;}
+          @extend %ico__arrow-left;
         }
         .owl-next {
           right: -8rem;
-          @extend %ico__arrow-right-major;
-          &:hover {@extend %ico__arrow-right-hover;}
+          @extend %ico__arrow-right;
         }
     }
   }

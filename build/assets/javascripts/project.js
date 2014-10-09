@@ -6,11 +6,18 @@
 $(function() {
 
   //
-  // .. Redirect
+  // .. An on-demand sticky header
+  // .. https://github.com/markgoodyear/headhesive.js/tree/master
   //
-  var hash = location.hash.substring(2);
-  $('.menu_i_a[href="#' + hash + '"]').trigger('click');
-  if (hash == 'contacts') setContactsHeight();
+  var options = {
+    offset: 300,
+    classes: {
+      clone:   'headhesive',
+      stick:   'headhesive__stick',
+      unstick: 'headhesive__unstick'
+    }
+  }
+  var header = new Headhesive('#header', options);
 
   //
   // .. Contacts change background
@@ -65,7 +72,7 @@ $(function() {
   $(window).scroll(function() {
 
     //
-    // .. Reset contacts block
+    // .. о_О Reset contacts block O_o
     //
     if ($(window).scrollTop() < ($(document).height() - $(window).height() * 2) && $('#contacts').hasClass('js-section-changed')) {
       $('#contacts').css({height: ''}).removeClass('js-section-changed');
