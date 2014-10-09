@@ -2,14 +2,14 @@ var config = {
   matchMedia: {
     phone: {
       minWidth: '320',
-      maxWidth: '639'
+      maxWidth: '739'
     },
     tablet: {
-      minWidth: '640',
-      maxWidth: '939'
+      minWidth: '740',
+      maxWidth: '1099'
     },
     desktop: {
-      minWidth: '940',
+      minWidth: '1100',
       maxWidth: '1180'
     }
   }

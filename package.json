@@ -18,6 +18,7 @@
     "gulp-ruby-haml": "0.0.3",
     "gulp-ruby-sass": "~0.5.0",
     "gulp-uglify": "~0.3.1",
-    "gulp-watch": "~0.6.8"
+    "gulp-watch": "~0.6.8",
+    "install": "^0.1.7"
   }
 }

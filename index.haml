@@ -20,7 +20,7 @@
 
   %body#page.page
     = Haml::Engine.new(File.read("views/common/_alerts.haml")).render
-    = Haml::Engine.new(File.read("views/layouts/_header.haml")).render
+    = Haml::Engine.new(File.read("views/layouts/_header_home.haml")).render
 
     %main#main.main{role: "main"}
       = Haml::Engine.new(File.read("views/home/_landing.haml")).render
@@ -28,23 +28,7 @@
       = Haml::Engine.new(File.read("views/home/_bitrix.haml")).render
       = Haml::Engine.new(File.read("views/home/_services.haml")).render
       = Haml::Engine.new(File.read("views/home/_works.haml")).render
-      
-      %section.section.section__blog{role: "region", aria: {label: "Blog"}}
-        .ctn
-          %h2.tx-center.mb-4 Новое в блоге
-          .new-post
-            .owl-carousel
-              %article.new-post_i
-                %header.mb-1
-                  %p.tx-muted 12 сентября
-                  %h5 Новая карточка товара для магазина реСтор
-                %p.tx-voice К&nbsp;выходу в&nbsp;релиз готовится новая версия детальной карточки товара для проекта re-store.ru. Новая карточка решает множество проблем и&nbsp;упрощает заказ товара и&nbsp;его бронирование в&nbsp;магазине.
-              %article.new-post_i
-                %header.mb-1
-                  %p.tx-muted 23 мая
-                  %h5 Поддержка Экор-Нева      
-                %p.tx-voice Взяли на&nbsp;поддержку корпоративный сайт предприятия Экор-Нева, участника научно-производственного холдинга ВМП. На&nbsp;сайте много информации, которую сотрудники нашей студии помогают.          
-
+      = Haml::Engine.new(File.read("views/home/_blog.haml")).render
       = Haml::Engine.new(File.read("views/home/_contacts.haml")).render
 
     = Haml::Engine.new(File.read("views/layouts/_footer.haml")).render

@@ -86,18 +86,20 @@ th, td {@include prefixes(box-sizing, border-box);}
     max-width: $ctn-fluid-max-width;
   }
   @if $grid == "responsive" {
-    @include mq(phone) {
-      min-width: nth($ctn-responsive-min-width-list, 1);
-      max-width: nth($ctn-responsive-max-width-list, 1);
-    }
-    @include mq(tablet) {
-      min-width: nth($ctn-responsive-min-width-list, 2);
-      max-width: nth($ctn-responsive-max-width-list, 2);
-    }
-    @include mq(desktop) {
-      min-width: nth($ctn-responsive-min-width-list, 3);
-      max-width: nth($ctn-responsive-max-width-list, 3);
-    }
+    min-width: nth($ctn-responsive-min-width-list, 2);
+    max-width: nth($ctn-responsive-max-width-list, 3);
+    // @include mq(phone) {
+    //   min-width: nth($ctn-responsive-min-width-list, 1);
+    //   max-width: nth($ctn-responsive-max-width-list, 1);
+    // }
+    // @include mq(tablet) {
+    //   min-width: nth($ctn-responsive-min-width-list, 2);
+    //   max-width: nth($ctn-responsive-max-width-list, 2);
+    // }
+    // @include mq(desktop) {
+    //   min-width: nth($ctn-responsive-min-width-list, 3);
+    //   max-width: nth($ctn-responsive-max-width-list, 3);
+    // }
     @include prefixes(box-sizing, border-box);
   }
 }

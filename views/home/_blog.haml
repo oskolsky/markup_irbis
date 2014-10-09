@@ -1,0 +1,19 @@
+%section#blog.section.section__blog{role: "region", aria: {label: "Blog"}}
+  %h2.tx-center.mb-4 
+    %a.blog-link{href: "/blog.html"} Новое
+    в блоге
+  .new-post
+    .owl-carousel
+      - 1.upto(8) do
+        %article.new-post_i
+          %header.mb-1
+            %p.tx-muted 12 сентября
+            %h5
+              %a.tx-base{href: "/blog.html"} Новая карточка товара для магазина реСтор
+          %p.tx-voice К&nbsp;выходу в&nbsp;релиз готовится новая версия детальной карточки товара для проекта re-store.ru. Новая карточка решает множество проблем и&nbsp;упрощает заказ товара и&nbsp;его бронирование в&nbsp;магазине.
+        %article.new-post_i
+          %header.mb-1
+            %p.tx-muted 23 мая
+            %h5
+              %a.tx-base{href: "/blog.html"} Поддержка Экор-Нева      
+          %p.tx-voice Взяли на&nbsp;поддержку корпоративный сайт предприятия Экор-Нева, участника научно-производственного холдинга ВМП. На&nbsp;сайте много информации, которую сотрудники нашей студии помогают.          

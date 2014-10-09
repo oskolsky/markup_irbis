@@ -27,7 +27,6 @@
   overflow: hidden;
   padding: 1.5rem 4rem;
 }
-@include mq(desktop) {
   .header__sticky {
     position: fixed;
     top: 0;
@@ -36,7 +35,6 @@
     z-index: 999;
     background-color: $base-bg;
   }
-}
 
 
 
@@ -159,7 +157,7 @@
 //
 .section__contacts {
   position: relative;
-  height: 66rem;
+  min-height: 66rem;
   background-color: #eee;
 }
 
@@ -217,11 +215,11 @@
     @extend %grid_i;
     @extend %grid_i__desktop-grid-8-12;
     @extend %grid_i__desktop-prefix-2-12;
+    @extend %grid_i__tablet-grid-10-12;
+    @extend %grid_i__tablet-prefix-1-12;
+    @extend %grid_i__phone-grid-1-1;
     &:not(:last-child) {border-bottom: .1rem solid #4380da;}
 
-    @include mq(tablet) {
-      text-align: center;
-    }
     @include mq(phone) {
       text-align: center;
     }
@@ -232,7 +230,9 @@
       .promo_i_img {
         vertical-align: middle !important;
         @extend %grid_i;
-        @extend %grid_i__desktop-grid-3-8;        
+        @extend %grid_i__desktop-grid-3-8;
+        @extend %grid_i__tablet-grid-3-8;
+        @extend %grid_i__phone-grid-1-1;
         img {
           vertical-align: top;
           background-repeat: no-repeat;
@@ -254,6 +254,8 @@
         vertical-align: middle !important;
         @extend %grid_i;
         @extend %grid_i__desktop-grid-5-8;
+        @extend %grid_i__tablet-grid-5-8;
+        @extend %grid_i__phone-grid-5-8;
       }
 
 
@@ -264,9 +266,11 @@
 //
 //****************************************************************************************************
 .bitrix {
-  background-image: image-url('1C.png');
-  background-repeat: no-repeat;
-  background-position: center;
+  @include mq(desktop) {
+    background-image: image-url('1C.png');  
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   ul {
     margin: 1rem 0 2.5rem 2rem;
     li {
@@ -310,6 +314,9 @@
     }
     @include mq(tablet) {
       width: 50%;
+    }
+    @include mq(phone) {
+      width: 100%;
     }
     &:hover {
       .works_i_caption {opacity: 1;}
@@ -356,12 +363,16 @@
   @extend %grid;
   .owl-carousel {
     @extend %grid_i;
-    @extend %grid_i__desktop-grid-8-12;  
+    @extend %grid_i__desktop-grid-8-12;
     @extend %grid_i__desktop-prefix-2-12;
+    @extend %grid_i__tablet-grid-8-12;
+    @extend %grid_i__tablet-prefix-2-12;
+    @extend %grid_i__phone-grid-8-12;
+    @extend %grid_i__phone-prefix-2-12;
 
     .owl-controls {
       .owl-nav {
-
+        
       }
         .owl-prev, .owl-next {
           position: absolute;
@@ -389,7 +400,7 @@
   }
 }
   .new-post_i {
-    padding: 0 3rem;
+    padding: 0 3rem;    
   }
 
 
@@ -455,6 +466,7 @@
     @extend %grid_i__desktop-grid-10-12;
     @extend %grid_i__desktop-prefix-1-12;
     @extend %grid_i__tablet-grid-1-1;
+    @extend %grid_i__phone-grid-1-1;
     padding-top: 5.5rem;
     border-top: 1px solid #e9ecf0;
     &:not(:last-child) {padding-bottom: 4.5rem;}
@@ -468,6 +480,7 @@
         @extend %grid_i__desktop-grid-8-10;
         @extend %grid_i__desktop-prefix-1-10;
         @extend %grid_i__tablet-grid-1-1;
+        @extend %grid_i__phone-grid-1-1;
       }
         .blog_i_header {
 
@@ -477,15 +490,11 @@
         }
         .blog_i_t {
           margin-bottom: .5rem;
-          a {color: $base-color;}
         }
         .blog_i_tx {
           color: $voice-color;
           > img {
             margin: 0 auto;
-            // @extend %grid_i;
-            // @extend %grid_i__desktop-grid-1-1;
-            // @extend %grid_i__tablet-grid-1-1;
           }
         }
         .blog_i_footer {
@@ -527,6 +536,14 @@
     text-align: center;
     background-color: rgba(255, 255, 255, .9);
   }
+
+//
+// .. Go to blog
+//
+.blog-link {
+  text-decoration: underline;
+  color: $base-color;
+}
 
 
 

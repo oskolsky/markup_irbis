@@ -1,3 +1,22 @@
 @include class(dialog) {
-  
+  position: relative;
+  background-color: #fff;  
+}
+
+.dialog_close {
+  top: 2rem;
+  right: 2rem;
+  -webkit-transform: scale(1);
+     -moz-transform: scale(1);
+          transform: scale(1);
+  .ico {
+    @include prefixes(transition, transform .11s ease);  
+  }
+  &:hover {
+    .ico {
+      -webkit-transform: scale(1.5);
+         -moz-transform: scale(1.5);
+              transform: scale(1.5);
+    }
+  }       
 }

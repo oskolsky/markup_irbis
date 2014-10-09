@@ -81,12 +81,14 @@ body {
     weight: $base-font-weight;
     family: $base-font-family;
   }
+  -webkit-font-smoothing: subpixel-antialiased;
   @if $grid == "fixed" {min-width: $ctn-fixed-width + $ctn-padding * 2;}
   @if $grid == "fluid" {min-width: $ctn-fluid-min-width + $ctn-padding * 2;}
   @if $grid == "responsive" {
-    @include mq(phone)   {min-width: nth($ctn-responsive-min-width-list, 1);}
-    @include mq(tablet)  {min-width: nth($ctn-responsive-min-width-list, 2);}
-    @include mq(desktop) {min-width: nth($ctn-responsive-min-width-list, 3);}
+    min-width: nth($ctn-responsive-min-width-list, 2);
+    // @include mq(phone)   {min-width: nth($ctn-responsive-min-width-list, 1);}
+    // @include mq(tablet)  {min-width: nth($ctn-responsive-min-width-list, 2);}
+    // @include mq(desktop) {min-width: nth($ctn-responsive-min-width-list, 3);}
   }
 }
 
@@ -218,6 +220,8 @@ h6 {@extend %zeta;}
 .tx-minor {color: $minor-color;}
 .tx-voice {color: $voice-color;}
 .tx-muted {color: $muted-color;}
+
+.tx-base  {color: $base-color;}
 
 .tx-left   {text-align: left;}
 .tx-center {text-align: center;}

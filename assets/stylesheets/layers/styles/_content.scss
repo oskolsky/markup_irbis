@@ -162,12 +162,28 @@
   // .. Figure
   //
   figure {
-    > img {margin-bottom: #{$content-factor / 2}rem !important;}
-    > figcaption {
-      color: #999;
-      font-style: italic;
+    position: relative;
+    padding: 8rem 0;    
+    &::before {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: -500rem;
+      bottom: 0;
+      left: -500rem;
+      content: '';
+      background-color: #f2f6fa;
     }
-  } 
+    img {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 0 !important;
+    }
+    > figcaption {
+      font-style: italic;
+      color: #999;
+    }
+  }
 
   //
   // .. Image
