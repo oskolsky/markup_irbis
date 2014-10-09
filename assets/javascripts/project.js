@@ -10,7 +10,7 @@ $(function() {
   // .. https://github.com/markgoodyear/headhesive.js/tree/master
   //
   var options = {
-    offset: 300,
+    offset: 500,
     classes: {
       clone:   'headhesive',
       stick:   'headhesive__stick',

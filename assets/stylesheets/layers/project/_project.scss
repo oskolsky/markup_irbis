@@ -426,19 +426,20 @@
 //****************************************************************************************************
 .contacts {
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 50%;
   width: 640px;
   height: 500px;
+  // margin-top: -88px;
   background-image: image-url("hands.svg");
   background-repeat: no-repeat;
   background-position: center;
-  @include prefixes(transform, translateX(-50%));
+  @include prefixes(transform, translate(-50%, -50%));
 }
   .contacts_header, .contacts_body {
     position: absolute;
     left: 50%;
-    width: 580px;
+    width: 580px;    
     @include prefixes(transform, translateX(-50%));
   }
   .contacts_header {
@@ -463,6 +464,8 @@
     top: 160px;
     height: 180px;
     padding-top: 3.5rem;
+    background-color: #fff;
+    border-radius: 0 0 1.7rem 1.7rem;
   }
 
 
