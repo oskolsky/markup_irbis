@@ -7735,13 +7735,23 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
   overflow: hidden;
   padding: 1.5rem 4rem; }
 
-.header__sticky {
+.headhesive {
   position: fixed;
+  z-index: 9999;
   top: 0;
-  right: 0;
   left: 0;
-  z-index: 999;
-  background-color: #fff; }
+  background: #fff;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out; }
+
+.headhesive__stick {
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%); }
 
 .nav {
   text-align: center; }

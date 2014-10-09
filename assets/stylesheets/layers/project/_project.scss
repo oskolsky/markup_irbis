@@ -19,38 +19,39 @@
   overflow: hidden;
   padding: 1.5rem 4rem;
 }
-  .header__sticky {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    background-color: $base-bg;
-  }
 
-  //
-  // .. An on-demand sticky header
-  // .. https://github.com/markgoodyear/headhesive.js/tree/master
-  //
   //
   // .. Cloned elem class
   //
   .headhesive {
-
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background: #fff;
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
+    -webkit-transition: all 300ms ease-in-out;
+       -moz-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
   }
+
   //
   // .. Stick class
   //
   .headhesive__stick {
-
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
   }
+
   //
   // .. Unstick class
   //
   .headhesive__unstick {
 
   }
-
 
 
 //****************************************************************************************************
