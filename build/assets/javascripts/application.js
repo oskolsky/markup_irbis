@@ -93,7 +93,7 @@ function formatMoney() {
 //
 // .. Open dialog
 //
-$(document).on('click touchstart', '[data-dialog="open"]', function() {
+$(document).on('click', '[data-dialog="open"]', function() {
   var url = $(this).data('url');
   $.arcticmodal('close');
   $.arcticmodal({
@@ -106,7 +106,7 @@ $(document).on('click touchstart', '[data-dialog="open"]', function() {
 //
 // .. Close dialog
 //
-$(document).on('click touchstart', '[data-dialog="close"]', function() {
+$(document).on('click', '[data-dialog="close"]', function() {
   $.arcticmodal('close');
   return false;
 });

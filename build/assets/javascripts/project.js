@@ -20,6 +20,28 @@ $(function() {
   var header = new Headhesive('#header', options);
 
   //
+  // .. Рorizontal paralax init
+  //
+  $('.section.section__landing').parallax('50%', 0.5);
+
+  //
+  // .. 2Gis map init
+  //
+  var map;
+
+  DG.then(function() {
+    map = DG.map('map', {
+      center: [59.87, 30.31],
+      zoom: 13,
+      fullscreenControl: false,
+      zoomControl: false,
+      scrollWheelZoom: false,
+      touchZoom: false,
+      trackResize: true
+    });
+  });  
+
+  //
   // .. Contacts change background
   //
   $('.contacts').find('.contacts_header').css({backgroundImage: 'url(/assets/images/place' + getRandomInt(1, 6) + '_2x.png)'});
@@ -41,11 +63,6 @@ $(function() {
       responsive: {
           0: {
               items: 1,
-              nav: true,
-              navText: false
-          },
-          740: {
-              items: 2,
               nav: true,
               navText: false
           },
@@ -91,6 +108,18 @@ $(function() {
     //
     if ($(window).scrollTop() < ($(document).height() - $(window).height() * 2) && $('#contacts').hasClass('js-section-changed')) {
       $('#contacts').css({height: ''}).removeClass('js-section-changed');
+
+      DG.then(function() {
+        map = DG.map('map', {
+          center: [59.87, 30.31],
+          zoom: 13,
+          fullscreenControl: false,
+          zoomControl: false,
+          scrollWheelZoom: false,
+          touchZoom: false,
+          trackResize: true
+        });
+      });
     }
 
   });
@@ -113,7 +142,18 @@ $(function() {
 // .. LOAD
 //
 //****************************************************************************************************
-$(window).load(function() {});
+$(window).load(function() {
+
+  //
+  // .. Masonry init
+  //
+  $('.works').imagesLoaded(function() {
+    $('.works').masonry({
+      itemSelector: '.works_i'
+    });  
+  });
+
+});
 
 
 

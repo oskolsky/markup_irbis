@@ -4,19 +4,6 @@
     %title Blog / Irbis
     = Haml::Engine.new(File.read("views/layouts/_head.haml")).render
     %script{src: "http://maps.api.2gis.ru/2.0/loader.js", data: {id: "dgLoader"}}
-    :javascript
-
-      var map;
-
-      DG.then(function() {
-        map = DG.map('map', {
-          center: [59.87, 30.31],
-          zoom: 13,
-          fullscreenControl: false,
-          zoomControl: false,
-          scrollWheelZoom: false
-        });
-      });
 
   %body#page.page
     = Haml::Engine.new(File.read("views/common/_alerts.haml")).render
