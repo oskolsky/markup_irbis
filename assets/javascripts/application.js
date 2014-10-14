@@ -7,6 +7,8 @@
 // .. arcticModal
 //
 $.arcticmodal('setDefault', {
+  closeOnEsc: false,
+  closeOnOverlayClick: false,
   overlay: {
     css: {
       backgroundColor: '#0b5ed8',
@@ -108,7 +110,6 @@ $(document).on('click', '[data-dialog="open"]', function() {
 //
 $(document).on('click', '[data-dialog="close"]', function() {
   $.arcticmodal('close');
-  return false;
 });
 
 

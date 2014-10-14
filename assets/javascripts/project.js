@@ -39,7 +39,7 @@ $(function() {
       touchZoom: false,
       trackResize: true
     });
-  });  
+  }); 
 
   //
   // .. Contacts change background
@@ -49,7 +49,7 @@ $(function() {
   //
   // .. Set height contacts block
   //
-  $('.menu_i_a[href="#contacts"]').on('click', function() {
+  $('.menu_i_a[href="/#/contacts/"]').on('click', function() {
     setContactsHeight();
   });
 
@@ -108,18 +108,6 @@ $(function() {
     //
     if ($(window).scrollTop() < ($(document).height() - $(window).height() * 2) && $('#contacts').hasClass('js-section-changed')) {
       $('#contacts').css({height: ''}).removeClass('js-section-changed');
-
-      DG.then(function() {
-        map = DG.map('map', {
-          center: [59.87, 30.31],
-          zoom: 13,
-          fullscreenControl: false,
-          zoomControl: false,
-          scrollWheelZoom: false,
-          touchZoom: false,
-          trackResize: true
-        });
-      });
     }
 
   });
@@ -143,6 +131,11 @@ $(function() {
 //
 //****************************************************************************************************
 $(window).load(function() {
+
+  //
+  // .. Set height map block
+  //
+  setMapHeight();
 
   //
   // .. Masonry init
@@ -170,15 +163,24 @@ function getRandomInt(min, max) {
 }
 
 //
-// .. Set height contacts block
+// .. Set height contacts & map block
 //
+function setMapHeight() {
+  var height = getContentHeight();
+  $('#map').height(height);
+}
+
 function setContactsHeight() {
+  var height = getContentHeight();
+  $('#contacts').height(height);
+  setTimeout("$('#contacts').addClass('js-section-changed');", 1000)
+}
+
+function getContentHeight() {
   var
     headerH = $('#header').outerHeight(),
     footerH = $('#footer').outerHeight(),
     windowH = $(window).outerHeight();
 
-  var total = windowH - headerH - footerH;
-  $('#contacts').height(total);
-  setTimeout("$('#contacts').addClass('js-section-changed');", 1000)
+  return windowH - headerH - footerH;
 }

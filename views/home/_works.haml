@@ -1,18 +1,19 @@
+- rand = rand(1..9999)
 %section#works.section.section__works{role: "region", aria: {label: "Works"}}
   .works.feed
     - 1.upto(6) do |i|
       %figure.works_i>
-        %a{href: "#", data: {dialog: "open", url: "/data/dialogs/works_show.html"}}
+        %a{href: "#/works/#{rand * i}/"}
           %img.works_i_preview{src: "/assets/images/work-preview-#{i}.jpg", width: "100%", alt: ""}
         %figcaption.works_i_caption
-          %a{href: "#", data: {dialog: "open", url: "/data/dialogs/works_show.html"}}
+          %a{href: "#/works/#{rand * i}/"}
             %h3.works_i_caption_t Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;
     - 1.upto(3) do |i|          
       %figure.works_i>
-        %a{href: "#", data: {dialog: "open", url: "/data/dialogs/works_show.html"}}
+        %a{href: "#/works/#{rand * i}/"}
           %img.works_i_preview{src: "/assets/images/work-preview-#{i}.jpg", width: "100%", alt: ""}
         %figcaption.works_i_caption
-          %a{href: "#", data: {dialog: "open", url: "/data/dialogs/works_show.html"}}
+          %a{href: "#/works/#{rand * i}/"}
             %h3.works_i_caption_t Новый&nbsp;интернет&nbsp;-&nbsp;магазин &laquo;re:Store&raquo;
   .feed-load
     %form.form.js-form
