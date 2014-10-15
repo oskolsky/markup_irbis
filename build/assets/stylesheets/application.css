@@ -6972,7 +6972,7 @@ textarea {
     font-size: 62.5%; } }
 
 body {
-  background-color: #fff;
+  background-color: white;
   color: #3f4146;
   font-weight: 300;
   font-family: "Ubuntu", "Helvetica Neue", Helvetica, Tahoma, sans-serif;
@@ -7834,7 +7834,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 
 .section__services {
   padding: 15rem 0;
-  background-color: #fff; }
+  background-color: white; }
 
 .section__works {
   overflow: hidden; }
@@ -7844,6 +7844,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 
 .section__contacts {
   position: relative;
+  overflow: hidden;
   min-height: 66rem;
   background-color: #eee; }
 
@@ -8094,7 +8095,6 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0; }
 
 .feed-load {
@@ -8113,6 +8113,4 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
   height: 6rem;
   text-align: center;
   color: #c8c9c3;
-  background-color: #fff; }
-
-/*# sourceMappingURL=application.css.map */
+  background-color: white; }
