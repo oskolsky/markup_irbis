@@ -408,6 +408,7 @@
   }
 }
   .new-post_i {
+    -webkit-backface-visibility: hidden;
     padding: 0 3rem;    
   }
 
