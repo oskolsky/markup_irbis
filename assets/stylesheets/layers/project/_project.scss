@@ -10,15 +10,33 @@
 // .. HEADER
 //
 //****************************************************************************************************
-.header {
-  position: absolute;
-  z-index: 998;
-  top: 2rem;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  padding: 1.5rem 4rem;
+.header {  
+  position: relative;
 }
+  .header_inner {
+    position: absolute;
+    right: 0;
+    bottom: -6.4rem;
+    left: 0;
+    height: 6.4rem;    
+  }
+    .header_logo {
+      position: absolute;
+      z-index: 999;
+      top: 50%;
+      left: 4rem;
+      @include prefixes(transform, translateY(-50%));
+    }
+    .header_phone {
+      position: absolute;
+      z-index: 999;
+      top: 50%;
+      right: 4rem;
+      color: $major-color;
+      text-align: center;
+      @extend %delta;
+      @include prefixes(transform, translateY(-50%));
+    }
 
   //
   // .. Cloned elem class
@@ -27,31 +45,20 @@
     position: fixed;
     z-index: 999;
     top: 0;
+    right: 0;
     left: 0;
-    background: #fff;
-    -webkit-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-            transform: translateY(-100%);
-    -webkit-transition: all 300ms ease-in-out;
-       -moz-transition: all 300ms ease-in-out;
-            transition: all 300ms ease-in-out;
   }
 
   //
   // .. Stick class
   //
   .headhesive__stick {
-    -webkit-transform: translateY(0%);
-        -ms-transform: translateY(0%);
-            transform: translateY(0%);
+    z-index: 9999;
+    .header_inner {
+      background-color: #fff;
+    }
   }
 
-  //
-  // .. Unstick class
-  //
-  .headhesive__unstick {
-
-  }
 
 
 //****************************************************************************************************
@@ -59,49 +66,74 @@
 // .. NAV
 //
 //****************************************************************************************************
-.nav {
-  text-align: center;
-  @include mq(desktop) {
-
+.nav {    
+  text-align: center;  
+  @include mq(phone) {
+    display: none;
+    padding: 3rem 0 4rem;
+    background-color: #fff;
   }
   @include mq(tablet) {
-    &.nav__touch {
+    display: none;
+    padding: 3rem 0 4rem;
+    background-color: #fff;
+  }
+  @include mq(desktop) {
+    display: block !important;
+    position: absolute;
+    z-index: 999;
+    top: 1.5rem;
+    right: 0;
+    left: 0;
+    // @include prefixes(transform, translateY(-50%));
+  }  
+}
+  .nav-toggle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include prefixes(transform, translate(-50%, -50%));
+    @include mq(desktop) {
       display: none;
-      padding: 4rem 0;
-      .menu_i {
-        display: block;
-        margin-right: 0;
-        &:not(:last-child) {
-          margin-bottom: 3.5rem;
-        }
-      }
     }
   }
-}
   .menu {
-
+  
   }
     .menu_i {
-      display: inline-block;
-      &:not(:last-child) {margin-right: 4rem;}
+      @include mq(phone) {
+        display: block;
+        &:not(:last-child) {margin-bottom: 3.5rem;}
+      }
+      @include mq(tablet) {
+        display: block;
+        &:not(:last-child) {margin-bottom: 3.5rem;}
+      }
+      @include mq(desktop) {
+        display: inline-block;
+        &:not(:last-child) {margin-right: 4rem;}
+      }
     }
       .menu_i_a {
         @extend .tx-sys;
       }
-    .menu_i_a__btn {
-      line-height: 3rem;
-      display: inline-block;
-      height: 3.2rem;
-      padding: 0 1.2rem;
-      border: 2px solid $link-color;
-      border-radius: .3rem;
-      @include prefixes(box-sizing, border-box);
-      &:hover {
-        color: #fff;
-        border-color: $major-color;
-        background-color: $major-color;
+      .menu_i_a__current {
+        color: red;
       }
-    }
+      .menu_i_a__btn {
+        line-height: 3rem;
+        display: inline-block;
+        height: 3.2rem;
+        padding: 0 1.2rem;
+        border: 2px solid $link-color;
+        border-radius: .3rem;
+        @include prefixes(box-sizing, border-box);
+        &:hover {
+          color: #fff;
+          border-color: $major-color;
+          background-color: $major-color;
+        }
+      }
 
 
 
@@ -539,6 +571,12 @@
   top: 0;
   right: 0;
   left: 0;
+  @include mq(tablet) {
+    bottom: 0;
+  }
+  @include mq(phone) {
+    bottom: 0;
+  }
 }
 
 //

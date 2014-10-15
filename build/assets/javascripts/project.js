@@ -10,7 +10,7 @@ $(function() {
   // .. https://github.com/markgoodyear/headhesive.js/tree/master
   //
   var options = {
-    offset: 500,
+    offset: 0,
     classes: {
       clone:   'headhesive',
       stick:   'headhesive__stick',
@@ -20,9 +20,33 @@ $(function() {
   var header = new Headhesive('#header', options);
 
   //
+  // .. DD ScrollSpy Menu
+  // .. http://www.dynamicdrive.com/dynamicindex1/ddscrollspymenu.htm
+  //
+  // $('.menu').ddscrollSpy({
+  //   highlightclass: 'menu_i_a__current',
+  //   scrolltopoffset: -$('#header').outerHeight()
+  // });
+
+  //
+  // .. Toggle menu
+  //
+  $('.js-nav-toggle').on('click', function() {
+    var $el = $('.nav');
+    if ($el.is(':hidden')) {
+      $el.slideDown();
+      $(this).find('.ico').removeClass('ico__nav').addClass('ico__close');
+    } else {
+      $el.slideUp();
+      $(this).find('.ico').removeClass('ico__close').addClass('ico__nav');
+    }
+    return false;
+  });
+
+  //
   // .. Рorizontal paralax init
   //
-  $('.section.section__landing').parallax('50%', 0.5);
+  // $('.section.section__landing').parallax('50%', 0.5);
 
   //
   // .. 2Gis map init
@@ -49,7 +73,7 @@ $(function() {
   //
   // .. Set height contacts block
   //
-  $('.menu_i_a[href="/#/contacts/"]').on('click', function() {
+  $('.menu_i_a[href="#contacts"]').on('click', function() {
     setContactsHeight();
   });
 
@@ -166,21 +190,33 @@ function getRandomInt(min, max) {
 // .. Set height contacts & map block
 //
 function setMapHeight() {
-  var height = getContentHeight();
-  $('#map').height(height);
+  if (window.matchMedia) {
+    if (matchMedia('all and (min-width: ' + config.matchMedia.desktop.minWidth + 'px)').matches) {
+      var height = getContentHeight();
+      $('#map').height(height);
+    }
+  }
 }
 
 function setContactsHeight() {
-  var height = getContentHeight();
-  $('#contacts').height(height);
-  setTimeout("$('#contacts').addClass('js-section-changed');", 1000)
+  if (window.matchMedia) {
+    if (matchMedia('all and (min-width: ' + config.matchMedia.desktop.minWidth + 'px)').matches) {
+      var height = getContentHeight();
+      $('#contacts').height(height);
+      setTimeout("$('#contacts').addClass('js-section-changed');", 1000)
+    }
+  }
 }
 
 function getContentHeight() {
-  var
-    headerH = $('#header').outerHeight(),
-    footerH = $('#footer').outerHeight(),
-    windowH = $(window).outerHeight();
+  if (window.matchMedia) {
+    if (matchMedia('all and (min-width: ' + config.matchMedia.desktop.minWidth + 'px)').matches) {
+      var
+        headerH = $('#header').outerHeight(),
+        footerH = $('#footer').outerHeight(),
+        windowH = $(window).outerHeight();
 
-  return windowH - headerH - footerH;
+      return windowH - headerH - footerH;
+    }
+  }
 }
