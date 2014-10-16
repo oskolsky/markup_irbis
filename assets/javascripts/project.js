@@ -6,39 +6,18 @@
 $(function() {
 
   //
-  // .. An on-demand sticky header
-  // .. https://github.com/markgoodyear/headhesive.js/tree/master
-  //
-  var options = {
-    offset: 0,
-    classes: {
-      clone:   'headhesive',
-      stick:   'headhesive__stick',
-      unstick: 'headhesive__unstick'
-    }
-  }
-  var header = new Headhesive('#header', options);
-
-  //
-  // .. DD ScrollSpy Menu
-  // .. http://www.dynamicdrive.com/dynamicindex1/ddscrollspymenu.htm
-  //
-  // $('.menu').ddscrollSpy({
-  //   highlightclass: 'menu_i_a__current',
-  //   scrolltopoffset: -$('#header').outerHeight()
-  // });
-
-  //
   // .. Toggle menu
   //
   $('.js-nav-toggle').on('click', function() {
-    var $el = $('.nav');
+    var $el = $('.nav');    
     if ($el.is(':hidden')) {
       $el.slideDown();
       $(this).find('.ico').removeClass('ico__nav').addClass('ico__close');
+      $('.header').find('.header_inner').css({backgroundColor: '#fff'});
     } else {
       $el.slideUp();
       $(this).find('.ico').removeClass('ico__close').addClass('ico__nav');
+      $('.header').find('.header_inner').css({backgroundColor: ''});
     }
     return false;
   });
@@ -117,6 +96,11 @@ $(function() {
     }
     return false;
   });
+
+  //
+  // .. Mask input
+  //
+  $('.form_tx_tag.form_tx_tag__phone').mask('+7 (999) 999-99-99');
 
 
 

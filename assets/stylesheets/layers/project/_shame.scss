@@ -1,0 +1,15 @@
+.arcticmodal-container_i {width: 100%;}
+.arcticmodal-container_i2 {width: 100%;}
+.arcticmodal-error {margin: 0 auto;}
+.arcticmodal-loading {margin: 0 auto;}
+
+.arcticmodal-container_i2 > .ctn {
+  @include mq(phone) {
+    min-width: nth($ctn-responsive-min-width-list, 2) - $ctn-padding * 4;
+    max-width: nth($ctn-responsive-max-width-list, 3) - $ctn-padding * 4;
+  }
+  @include mq(tablet) {
+    min-width: nth($ctn-responsive-min-width-list, 2) - $ctn-padding * 4;
+    max-width: nth($ctn-responsive-max-width-list, 3) - $ctn-padding * 4;
+  }
+}

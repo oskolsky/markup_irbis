@@ -37,9 +37,8 @@
       "./assets/javascripts/vendor/owl.carousel.js",
       "./assets/javascripts/vendor/imagesloaded.pkgd.js",
       "./assets/javascripts/vendor/masonry.pkgd.js",
-      "./assets/javascripts/vendor/headhesive.min.js",
       "./assets/javascripts/vendor/jquery.parallax-1.1.3.js",
-      "./assets/javascripts/vendor/ddscrollspy.js",
+      "./assets/javascripts/vendor/jquery.maskedinput.js",
       "./assets/javascripts/config.js",
       "./assets/javascripts/jquery.extensions.js",
       "./assets/javascripts/helpers.js",
@@ -66,7 +65,8 @@
     "list": [
       "./favicon.ico",
       "./humans.txt",
-      "./robots.txt"
+      "./robots.txt",
+      "./.htaccess"
     ]
   }
 }

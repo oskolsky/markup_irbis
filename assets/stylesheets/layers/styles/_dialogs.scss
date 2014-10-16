@@ -1,10 +1,6 @@
 @include class(dialog) {
   position: relative;
   background-color: #fff;
-  > .ctn {
-    min-width: nth($ctn-responsive-min-width-list, 2) - $ctn-padding * 4;
-    max-width: nth($ctn-responsive-max-width-list, 3) - $ctn-padding * 4;
-  }
 }
 
 .dialog_close {

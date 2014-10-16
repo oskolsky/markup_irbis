@@ -1,0 +1,91 @@
+:javascript
+  new App.Views.OrderDialog();
+
+.ctn
+  .grid
+    .grid_i.grid_i__desktop-grid-10-12.grid_i__desktop-prefix-1-12.grid_i__tablet-grid-6-6.grid_i__phone-grid-6-6>
+      
+      .dialog
+        .grid
+          .grid_i.grid_i__desktop-grid-8-10.grid_i__desktop-prefix-1-10.grid_i__tablet-grid-4-6.grid_i__tablet-prefix-1-6.grid_i__phone-grid-4-6.grid_i__phone-prefix-1-6>
+
+            %a.dialog_close{href: "/#/", data: {dialog: "close"}}
+              %i.ico.ico__24.ico__close
+
+            .pt-6.pb-6
+
+              %div.mb-2
+                %a{href: "#"}
+                  %img.va-t{src: "/assets/images/logo.svg", width: 138, height: 32, alt: "Irbis"}
+
+              #dialog-html
+
+%script#order-form{type: "text/html"}
+  .grid
+    .grid_i.grid_i__desktop-grid-3-8.grid_i__tablet-grid-1-1.grid_i__phone-grid-1-1>
+      %div.mb-2
+        %p.tx-voice 
+          Заявки рассматриваются
+          %br
+          в&nbsp;течение двух рабочих дней.
+      %div.mb-2
+        %p.tx-voice 
+          Рабочая группа из&nbsp;6&nbsp;человек, 
+          %br
+          реализация&nbsp;&mdash; от&nbsp;5&nbsp;недель.
+      %div.mb-2
+        %p.tx-voice 
+          Если у&nbsp;вас есть вопросы, 
+          %br 
+          вы&nbsp;можете позвонить нам:
+        %p 
+          %b +7 812 385-58-25
+    .grid_i.grid_i__desktop-grid-5-8.grid_i__tablet-grid-1-1.grid_i__phone-grid-1-1>
+      %form.form.js-form.p-r
+        %img.stamp.visible-desktop{src: "/assets/images/stamp.svg", width: 194, height: 55, alt: ""}
+        %div.mb-2
+          .form_row
+            .form_el.form_el__block.form_tx.js-form_el
+              %input.form_el_tag.form_tx_tag{type: "text", placeholder: "Представьтесь", autofocus: "autofocus"}
+          .form_row
+            .form_el.form_el__block.form_tx.js-form_el
+              %input.form_el_tag.form_tx_tag.form_tx_tag__phone{type: "text", placeholder: "Телефон"}
+          .form_row
+            .form_el.form_el__block.form_tx.js-form_el
+              %input.form_el_tag.form_tx_tag{type: "text", placeholder: "Электронная почта", data: {valid: "false"}}
+          
+          .form_row
+            .order-message
+
+              %textarea.order-message_textarea{rows: 5, placeholder: "Опишите задачу"}
+
+              %ul.order-files
+                %li.order-files_i
+                  %a{href: "#"}
+                    %i.ico.ico__16.ico__trash.order-files_i_icon
+                  %span.order-files_i_name Карта сайта.xls
+                %li.order-files_i
+                  %a{href: "#"}
+                    %i.ico.ico__16.ico__trash.order-files_i_icon
+                  %span.order-files_i_name Первоначальная структура наполнения и карта сайта в длинном названии файла.xls
+                %li.order-files_i 
+                  %i.fa.fa-circle-o-notch.fa-spin.order-files_i_icon
+                  %span.order-files_i_name Первоначальная структура наполнения.doc
+
+              .form_el.form_el__block.js-form_el.form_file{data: {placeholder: "Выберите файлы"}}
+                %span.form_el_inner.js-form_el_inner.form_file_inner
+                %input.form_el_tag.form_file_tag{type: "file"}
+
+        .form_el.form_btn.js-form_el
+          %p.form_btn_inner Отправить заявку
+          %button.form_el_tag.form_btn_tag#order-submit{type: "submit"} Отправить заявку  
+
+%script#order-complete{type: "text/html"}
+  .tx-center.pt-8.pb-10
+    %div.mb-3
+      %p Спасибо за заявку.
+      %p Наши менеджеры свяжутся с&nbsp;Вами как можно быстрее.
+    %form.form.js-form
+      .form_el.form_btn.js-form_el
+        %p.form_btn_inner Ок
+        %button.form_el_tag.form_btn_tag#order-close{type: "button"} Ок

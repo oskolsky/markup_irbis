@@ -1,52 +1,184 @@
-Backbone.history.start({});
-
-
-
 //****************************************************************************************************
 //
 // .. APPLICATION
 //
 //****************************************************************************************************
 window.App = {
+  Router: {},
   Views: {},
   Models: {},
-  Collections : {},
-  Router: {}
+  Collections: {}
 };
 
 
 
-//****************************************************************************************************
-//
-// .. ROUTER
-//
-//****************************************************************************************************
+// //****************************************************************************************************
+// //
+// // .. ROUTER
+// //
+// //****************************************************************************************************
+// App.Router = Backbone.Router.extend({
+
+//   routes: {
+//     'works/:id/': 'works',
+//     'order': 'order'
+//   },
+ 
+//   works: function(id) {
+//     var url = '/data/dialogs/works_show.html';
+//     this.openDialog(url);
+//     return this;
+//   },
+
+//   order: function() {
+//     var url = '/data/dialogs/order.html';
+//     this.openDialog(url);
+//     return this;
+//   },
+
+//   openDialog: function(url) {
+//     $.arcticmodal('close');
+//     $.arcticmodal({
+//       type: 'ajax',
+//       url: url,
+//       beforeOpen: function() {
+//         $('.header__sticky').find('.header_phone').css({right: 40 + getBrowserScrollSize().width});
+//         $('.header__sticky').find('.nav').css({marginRight: getBrowserScrollSize().width});
+//       },
+//       afterClose: function() {
+//         $('.header__sticky').find('.header_phone').css({right: 40});
+//         $('.header__sticky').find('.nav').css({marginRight: ''});
+//       }
+//     });
+//     return false;
+//   }
+
+// });
+
+
+
+
+
+
+
+// //****************************************************************************************************
+// //
+// // .. INIT
+// //
+// //****************************************************************************************************
+// new App.Router();
+
+// Backbone.history.start({pushState: true});
+
+
+// App.Router = Backbone.Router.extend({
+
+//   routes: {
+//     'order': 'order'
+//   },
+ 
+//   order: function() {
+//     alert('Order');
+//   }
+
+// });
+
+// new App.Router();
+
+// Backbone.history.start();
+
+
+
+
+window.App = {
+  Models: {},
+  Collections: {},
+  Views: {},
+  Router: {}
+};
+
 App.Router = Backbone.Router.extend({
+  
+  initialize: function() {
+    Backbone.history.start();
+  },
 
   routes: {
-    'works/:id/': 'works'
+    'order(/)': 'order',
+    'works(/:id)(/)': 'works'
   },
- 
+
+  order: function() {
+    var url = '/data/dialogs/order.html';
+    this.openDialog(url);
+    return this;
+  },
+
   works: function(id) {
+    alert('Works - ' + id);
+  },
 
-    var loadURL = '/data/dialogs/works_show.html';
-
+  openDialog: function(url) {
     $.arcticmodal('close');
-
     $.arcticmodal({
       type: 'ajax',
-      url: loadURL
+      url: url,
+      beforeOpen: function() {
+        // $('.header__sticky').find('.header_phone').css({right: 40 + getBrowserScrollSize().width});
+        // $('.header__sticky').find('.nav').css({marginRight: getBrowserScrollSize().width});
+      },
+      afterClose: function() {
+        // $('.header__sticky').find('.header_phone').css({right: 40});
+        // $('.header__sticky').find('.nav').css({marginRight: ''});
+      }
     });
-
+    return false;
   }
 
 });
 
-
-
-//****************************************************************************************************
-//
-// .. INIT
-//
-//****************************************************************************************************
 new App.Router();
+
+
+
+//****************************************************************************************************
+//
+// .. VIEWS
+//
+//****************************************************************************************************
+App.Views.OrderDialog = Backbone.View.extend({
+
+  el: '#dialog-html',
+
+  events: {
+    'click #order-submit': 'renderMessage',
+    'click #order-close': 'dialogClose'
+  },
+
+  initialize: function() {
+    this.renderForm();
+  },
+
+  renderForm: function() {
+    this.$el.html(_.template($('#order-form').html())());
+
+    $('.js-form').customForm();
+    $('.form_tx_tag.form_tx_tag__phone').mask('+7 (999) 999-99-99');
+
+    //
+    // .. ТУТ ОБРАБОТЧИК СОБЫТИЯ !!!!!!
+    //
+
+    return false;
+  },
+  
+  renderMessage: function() {
+    this.$el.html(_.template($('#order-complete').html())());
+    return false;
+  },
+
+  dialogClose: function() {
+    $.arcticmodal('close');
+  }
+
+});

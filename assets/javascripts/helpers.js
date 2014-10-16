@@ -126,6 +126,49 @@ $(function() {
 
 //****************************************************************************************************
 //
+// .. STICKY HEADER
+//
+//****************************************************************************************************
+$.fn.stickyHeader = function() {
+  if (this.length) {
+    var
+      $page = $('#page'),
+      $header = this,
+      headerOuterHeight = $header.outerHeight(),
+      headerPositionTop = $header.position().top,
+      headerOffsetTop = $header.data('offset-top'),
+      windowScrollTop = $(window).scrollTop();
+        
+    if ($header.length) {
+      $header.data('offset-top', $header.offset().top);
+    }
+
+    if (windowScrollTop > headerPositionTop) {
+      $page.css({'padding-top': headerOuterHeight + 'px'});
+      $header.addClass('header__sticky');
+    }
+
+    $(window).scroll(function() {
+      windowScrollTop = $(window).scrollTop();
+      headerOffsetTop = $header.data('offset-top');
+
+      if (windowScrollTop > headerOffsetTop) {
+        $page.css({'padding-top': headerOuterHeight + 'px'});
+        $header.addClass('header__sticky');
+      } else {
+        $header.removeClass('header__sticky');
+        $page.css({'padding-top': '0'});
+      }
+    });
+
+    return this;
+  }
+};
+
+
+
+//****************************************************************************************************
+//
 // .. STICKY FOOTER
 //
 //****************************************************************************************************

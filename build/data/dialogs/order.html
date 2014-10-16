@@ -1,0 +1,116 @@
+<script>
+  new App.Views.OrderDialog();
+</script>
+<div class="ctn">
+  <div class="grid"><div class="grid_i grid_i__desktop-grid-10-12 grid_i__desktop-prefix-1-12 grid_i__tablet-grid-6-6 grid_i__phone-grid-6-6">
+      <div class="dialog">
+        <div class="grid"><div class="grid_i grid_i__desktop-grid-8-10 grid_i__desktop-prefix-1-10 grid_i__tablet-grid-4-6 grid_i__tablet-prefix-1-6 grid_i__phone-grid-4-6 grid_i__phone-prefix-1-6">
+            <a class="dialog_close" data-dialog="close" href="/#/">
+              <i class="ico ico__24 ico__close"></i>
+            </a>
+            <div class="pt-6 pb-6">
+              <div class="mb-2">
+                <a href="#">
+                  <img alt="Irbis" class="va-t" height="32" src="/assets/images/logo.svg" width="138">
+                </a>
+              </div>
+              <div id="dialog-html"></div>
+            </div>
+          </div></div>
+      </div>
+    </div></div>
+</div>
+<script id="order-form" type="text/html">
+  <div class="grid"><div class="grid_i grid_i__desktop-grid-3-8 grid_i__tablet-grid-1-1 grid_i__phone-grid-1-1">
+      <div class="mb-2">
+        <p class="tx-voice">
+          Заявки рассматриваются
+          <br>
+          в&nbsp;течение двух рабочих дней.
+        </p>
+      </div>
+      <div class="mb-2">
+        <p class="tx-voice">
+          Рабочая группа из&nbsp;6&nbsp;человек,
+          <br>
+          реализация&nbsp;&mdash; от&nbsp;5&nbsp;недель.
+        </p>
+      </div>
+      <div class="mb-2">
+        <p class="tx-voice">
+          Если у&nbsp;вас есть вопросы,
+          <br>
+          вы&nbsp;можете позвонить нам:
+        </p>
+        <p>
+          <b>+7 812 385-58-25</b>
+        </p>
+      </div>
+    </div><div class="grid_i grid_i__desktop-grid-5-8 grid_i__tablet-grid-1-1 grid_i__phone-grid-1-1">
+      <form class="form js-form p-r">
+        <img alt="" class="stamp visible-desktop" height="55" src="/assets/images/stamp.svg" width="194">
+        <div class="mb-2">
+          <div class="form_row">
+            <div class="form_el form_el__block form_tx js-form_el">
+              <input autofocus="autofocus" class="form_el_tag form_tx_tag" placeholder="Представьтесь" type="text">
+            </div>
+          </div>
+          <div class="form_row">
+            <div class="form_el form_el__block form_tx js-form_el">
+              <input class="form_el_tag form_tx_tag form_tx_tag__phone" placeholder="Телефон" type="text">
+            </div>
+          </div>
+          <div class="form_row">
+            <div class="form_el form_el__block form_tx js-form_el">
+              <input class="form_el_tag form_tx_tag" data-valid="false" placeholder="Электронная почта" type="text">
+            </div>
+          </div>
+          <div class="form_row">
+            <div class="order-message">
+              <textarea class="order-message_textarea" placeholder="Опишите задачу" rows="5"></textarea>
+              <ul class="order-files">
+                <li class="order-files_i">
+                  <a href="#">
+                    <i class="ico ico__16 ico__trash order-files_i_icon"></i>
+                  </a>
+                  <span class="order-files_i_name">Карта сайта.xls</span>
+                </li>
+                <li class="order-files_i">
+                  <a href="#">
+                    <i class="ico ico__16 ico__trash order-files_i_icon"></i>
+                  </a>
+                  <span class="order-files_i_name">Первоначальная структура наполнения и карта сайта в длинном названии файла.xls</span>
+                </li>
+                <li class="order-files_i">
+                  <i class="fa fa-circle-o-notch fa-spin order-files_i_icon"></i>
+                  <span class="order-files_i_name">Первоначальная структура наполнения.doc</span>
+                </li>
+              </ul>
+              <div class="form_el form_el__block js-form_el form_file" data-placeholder="Выберите файлы">
+                <span class="form_el_inner js-form_el_inner form_file_inner"></span>
+                <input class="form_el_tag form_file_tag" type="file">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form_el form_btn js-form_el">
+          <p class="form_btn_inner">Отправить заявку</p>
+          <button class="form_el_tag form_btn_tag" id="order-submit" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+    </div></div>
+</script>
+<script id="order-complete" type="text/html">
+  <div class="tx-center pt-8 pb-10">
+    <div class="mb-3">
+      <p>Спасибо за заявку.</p>
+      <p>Наши менеджеры свяжутся с&nbsp;Вами как можно быстрее.</p>
+    </div>
+    <form class="form js-form">
+      <div class="form_el form_btn js-form_el">
+        <p class="form_btn_inner">Ок</p>
+        <button class="form_el_tag form_btn_tag" id="order-close" type="button">Ок</button>
+      </div>
+    </form>
+  </div>
+</script>

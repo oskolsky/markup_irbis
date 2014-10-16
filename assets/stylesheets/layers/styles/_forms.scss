@@ -16,6 +16,11 @@ input {
   &[type="search"]::-webkit-search-decoration {-webkit-appearance: none;}
 }
 
+::-webkit-input-placeholder {color: $muted-color;}
+          :-moz-placeholder {color: $muted-color;}
+         ::-moz-placeholder {color: $muted-color;}
+     :-ms-input-placeholder {color: $muted-color;}
+
 
 
 //****************************************************************************************************
@@ -28,10 +33,8 @@ input {
     background-color: #eee;
     opacity: .5;
   }
-  &[data-valid="true"] {
-    color: green;
+  &[data-valid="true"] {    
     &:not(.form_btn) {
-      background-color: fade-out(green, .9);
       border-color: fade-out(green, .3);
     }
     &.form_btn {
@@ -49,10 +52,8 @@ input {
     }
   }
   &[data-valid="false"] {
-    color: red;
     &:not(.form_btn) {
-      background-color: fade-out(red, .9);
-      border-color: fade-out(red, .3);
+      border: .2rem solid #ff464c;
     }
     &.form_btn {
       border-color: fade-out(red, .45);
@@ -73,6 +74,13 @@ input {
     .form_el__focus {@extend %focus-style;}
   }
   .form_el_tag[disabled] {cursor: no-drop;}
+
+//
+// .. Row
+//
+.form_row {
+  &:not(:last-child) {margin-bottom: .6rem;}
+}
 
 //
 // .. Label
@@ -116,22 +124,22 @@ input {
 // .. Text
 //
 .form_tx {
-  padding: 0 .75rem;
-  height: 3rem;
-  border: 1px solid #ccc;
+  padding: 0 2rem;
+  height: 6.4rem;
+  border: 1px solid #c8c9c3;
   border-radius: .3rem;
-  background-color: #fff;
+  background: #fff;
 }
 
 //
 // .. Textarea
 //
 .form_textarea {
-  padding: .5rem .75rem;
-  height: 9.2rem;
-  border: 1px solid #ccc;
+  padding: 2rem;
+  height: 22.5rem;
+  border: 1px solid #c8c9c3;
   border-radius: .3rem;
-  background-color: #fff;
+  background: #fff;
 }
 
 //
@@ -176,22 +184,25 @@ input {
 // .. File
 //
 .form_file {
-  height: 3rem;
-  border: 1px solid #ccc;
+  height: 4.4rem;
+  cursor: pointer;
+  text-align: center;
+  color: $muted-color;
+  border: 1px dashed $muted-color;
   border-radius: .3rem;
   background-color: #fff;
-  cursor: pointer;
   &[disabled] {cursor: no-drop;}
-  &::after {
-    right: .6rem;
-    color: #ccc;
-    content: "\f07c";
-    font-family: FontAwesome;
+  &:hover {border-color: $major-color;}
+  &::before {
+    content: '';
+    margin-right: 1.5rem;
+    @extend .ico;
+    @extend .ico__16;
+    @extend .ico__attach;
   }
 }
   .form_file_inner {
-    margin: 0 2.8rem 0 .75rem;
-    line-height: 2.8rem;
+    line-height: 4rem;
   }
 
 //

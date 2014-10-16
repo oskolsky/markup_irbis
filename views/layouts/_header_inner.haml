@@ -1,22 +1,24 @@
 %header#header.header{role: "banner"}
-  .grid
-    .grid_i.grid_i__middle.grid_i__desktop-grid-2-12.grid_i__tablet-grid-2-6.grid_i__phone-grid-2-6>
-      %a{href: "/"}
-        %img.va-t{src: "/assets/images/logo.svg", width: 138, height: 32, alt: "Irbis"}
-    .grid_i.grid_i__middle.grid_i__desktop-grid-8-12.grid_i__tablet-grid-2-6.grid_i__phone-grid-2-6>
-      %nav.nav{role: "navigation"}
-        %a.nav-toggle.js-nav-toggle.hidden-desktop{href: "#"}
-          %i.ico.ico__24.ico__nav
-        %ul.menu.visible-desktop
-          %li.menu_i
-            %a.menu_i_a{href: "#"} Услуги
-          %li.menu_i
-            %a.menu_i_a{href: "#"} Портфолио
-          %li.menu_i
-            %a.menu_i_a{href: "#"} Контакты
-          %li.menu_i
-            %a.menu_i_a.menu_i_a__btn{href: "#", data: {dialog: "open", url: "/data/dialogs/feedback.html"}} Заказать сайт
-          %li.menu_i
-            %a.menu_i_a{href: "#"} Блог
-    .grid_i.grid_i__middle.grid_i__desktop-grid-2-12.grid_i__tablet-grid-2-6.grid_i__phone-grid-2-6>
-      %p.delta.tx-major.tx-right +7 812 385-58-25
+
+  %nav.nav{role: "navigation"}
+    %ul.menu
+      %li.menu_i
+        %a.menu_i_a{href: "#services", data: {scroll: "#services", offset: "405"}} Услуги
+      %li.menu_i
+        %a.menu_i_a{href: "#works", data: {scroll: "#works"}} Портфолио
+      %li.menu_i
+        %a.menu_i_a{href: "#blog", data: {scroll: "#blog"}} Блог
+      %li.menu_i
+        %a.menu_i_a{href: "#contacts", data: {scroll: "#contacts"}} Контакты
+      %li.menu_i
+        %a.menu_i_a.menu_i_a__btn{href: "/#/order/"} Заказать сайт
+
+  .header_inner
+
+    %a{href: "/"}
+      %img.header_logo{src: "/assets/images/logo.svg", width: 138, height: 32, alt: "Irbis"}
+
+    %a.nav-toggle.js-nav-toggle{href: "#"}
+      %i.ico.ico__24.ico__nav
+
+    %p.header_phone +7 812 385-58-25
