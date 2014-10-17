@@ -6,6 +6,12 @@
 $(function() {
 
   //
+  // .. Router init
+  // .. app.js
+  //
+  new App.Router();
+
+  //
   // .. Toggle menu
   //
   $('.js-nav-toggle').on('click', function() {
@@ -48,13 +54,6 @@ $(function() {
   // .. Contacts change background
   //
   $('.contacts').find('.contacts_header').css({backgroundImage: 'url(/assets/images/place' + getRandomInt(1, 6) + '_2x.png)'});
-
-  //
-  // .. Set height contacts block
-  //
-  $('.menu_i_a[href="#contacts"]').on('click', function() {
-    setContactsHeight();
-  });
 
   //
   // .. OWL Carousel init

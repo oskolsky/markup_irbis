@@ -97,9 +97,8 @@ $(document).on('click touchstart', '[data-scroll]', function() {
   } else {
     $('html, body').animate({scrollTop: destination}, $(document).height() / 10);
   }
-
-  return false;
   
+  return false;  
 });
 
 

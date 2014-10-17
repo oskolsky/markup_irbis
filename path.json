@@ -65,8 +65,7 @@
     "list": [
       "./favicon.ico",
       "./humans.txt",
-      "./robots.txt",
-      "./.htaccess"
+      "./robots.txt"
     ]
   }
 }

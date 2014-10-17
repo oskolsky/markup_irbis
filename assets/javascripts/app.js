@@ -4,99 +4,19 @@
 //
 //****************************************************************************************************
 window.App = {
-  Router: {},
-  Views: {},
-  Models: {},
-  Collections: {}
-};
-
-
-
-// //****************************************************************************************************
-// //
-// // .. ROUTER
-// //
-// //****************************************************************************************************
-// App.Router = Backbone.Router.extend({
-
-//   routes: {
-//     'works/:id/': 'works',
-//     'order': 'order'
-//   },
- 
-//   works: function(id) {
-//     var url = '/data/dialogs/works_show.html';
-//     this.openDialog(url);
-//     return this;
-//   },
-
-//   order: function() {
-//     var url = '/data/dialogs/order.html';
-//     this.openDialog(url);
-//     return this;
-//   },
-
-//   openDialog: function(url) {
-//     $.arcticmodal('close');
-//     $.arcticmodal({
-//       type: 'ajax',
-//       url: url,
-//       beforeOpen: function() {
-//         $('.header__sticky').find('.header_phone').css({right: 40 + getBrowserScrollSize().width});
-//         $('.header__sticky').find('.nav').css({marginRight: getBrowserScrollSize().width});
-//       },
-//       afterClose: function() {
-//         $('.header__sticky').find('.header_phone').css({right: 40});
-//         $('.header__sticky').find('.nav').css({marginRight: ''});
-//       }
-//     });
-//     return false;
-//   }
-
-// });
-
-
-
-
-
-
-
-// //****************************************************************************************************
-// //
-// // .. INIT
-// //
-// //****************************************************************************************************
-// new App.Router();
-
-// Backbone.history.start({pushState: true});
-
-
-// App.Router = Backbone.Router.extend({
-
-//   routes: {
-//     'order': 'order'
-//   },
- 
-//   order: function() {
-//     alert('Order');
-//   }
-
-// });
-
-// new App.Router();
-
-// Backbone.history.start();
-
-
-
-
-window.App = {
   Models: {},
   Collections: {},
   Views: {},
   Router: {}
 };
 
+
+
+//****************************************************************************************************
+//
+// .. ROUTER
+//
+//****************************************************************************************************
 App.Router = Backbone.Router.extend({
   
   initialize: function() {
@@ -104,8 +24,41 @@ App.Router = Backbone.Router.extend({
   },
 
   routes: {
-    'order(/)': 'order',
-    'works(/:id)(/)': 'works'
+    'services(/)' : 'services',
+    'works(/)'    : 'works',
+    'works/:id(/)': 'worksShow',
+    'blog(/)'     : 'blog',
+    'contacts(/)' : 'contacts',
+    'order(/)'    : 'order'
+  },
+
+  services: function() {
+    this.scrollTo({
+      anchor: '#services',
+      offset: 340
+    });
+  },
+
+  works: function() {
+    this.scrollTo({anchor: '#works'});
+  },
+
+  worksShow: function(id) {
+    var url = '/data/dialogs/works_show.html';
+    this.openDialog(url);
+    return this;
+  },
+
+  blog: function() {
+    this.scrollTo({
+      anchor: '#blog',
+      offset: -1
+  });
+  },
+
+  contacts: function() {
+    this.scrollTo({anchor: '#contacts'});
+    setContactsHeight();
   },
 
   order: function() {
@@ -114,30 +67,30 @@ App.Router = Backbone.Router.extend({
     return this;
   },
 
-  works: function(id) {
-    alert('Works - ' + id);
-  },
-
   openDialog: function(url) {
     $.arcticmodal('close');
     $.arcticmodal({
       type: 'ajax',
       url: url,
       beforeOpen: function() {
-        // $('.header__sticky').find('.header_phone').css({right: 40 + getBrowserScrollSize().width});
-        // $('.header__sticky').find('.nav').css({marginRight: getBrowserScrollSize().width});
+        $('.header__sticky').find('.header_phone').css({right: 40 + getBrowserScrollSize().width});
+        $('.header__sticky').find('.nav').css({marginRight: getBrowserScrollSize().width});
       },
       afterClose: function() {
-        // $('.header__sticky').find('.header_phone').css({right: 40});
-        // $('.header__sticky').find('.nav').css({marginRight: ''});
+        $('.header__sticky').find('.header_phone').css({right: 40});
+        $('.header__sticky').find('.nav').css({marginRight: ''});
       }
     });
     return false;
+  },
+
+  scrollTo: function(options) {
+    options.offset = $('.header_inner').outerHeight() + options.offset || $('.header_inner').outerHeight();
+    var destination = $(options.anchor).offset().top - options.offset;
+    $('html, body').animate({scrollTop: destination}, 300);
   }
 
 });
-
-new App.Router();
 
 
 
@@ -179,6 +132,7 @@ App.Views.OrderDialog = Backbone.View.extend({
 
   dialogClose: function() {
     $.arcticmodal('close');
+    location.href = '/#/';
   }
 
 });
