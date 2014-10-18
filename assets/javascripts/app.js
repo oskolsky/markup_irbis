@@ -35,8 +35,8 @@ App.Router = Backbone.Router.extend({
   services: function() {
     this.scrollTo({
       anchor: '#services',
-      offset: 340
-    });
+      offset: 300
+    });    
   },
 
   works: function() {
