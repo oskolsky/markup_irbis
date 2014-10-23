@@ -1,6 +1,7 @@
 @include class(dialog) {
   position: relative;
   background-color: #fff;
+  @include prefixes(animation-duration, .66s);
 }
 
 .dialog_close {

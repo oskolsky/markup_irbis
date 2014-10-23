@@ -13,3 +13,5 @@
     max-width: nth($ctn-responsive-max-width-list, 3) - $ctn-padding * 4;
   }
 }
+
+.arcticmodal-loading, .arcticmodal-error {display: none;}

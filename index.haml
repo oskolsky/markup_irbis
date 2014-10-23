@@ -10,12 +10,17 @@
     = Haml::Engine.new(File.read("views/layouts/_header_home.haml")).render
 
     %main#main.main{role: "main"}
-      = Haml::Engine.new(File.read("views/home/_landing.haml")).render
-      = Haml::Engine.new(File.read("views/home/_promo.haml")).render
-      = Haml::Engine.new(File.read("views/home/_bitrix.haml")).render
-      = Haml::Engine.new(File.read("views/home/_services.haml")).render
-      = Haml::Engine.new(File.read("views/home/_works.haml")).render
-      = Haml::Engine.new(File.read("views/home/_blog.haml")).render
-      = Haml::Engine.new(File.read("views/home/_contacts.haml")).render
+      #landing
+        = Haml::Engine.new(File.read("views/home/_landing.haml")).render
+      #services
+        = Haml::Engine.new(File.read("views/home/_promo.haml")).render
+        = Haml::Engine.new(File.read("views/home/_bitrix.haml")).render
+        = Haml::Engine.new(File.read("views/home/_services.haml")).render
+      #works
+        = Haml::Engine.new(File.read("views/home/_works.haml")).render
+      #blog
+        = Haml::Engine.new(File.read("views/home/_blog.haml")).render
+      #contacts
+        = Haml::Engine.new(File.read("views/home/_contacts.haml")).render
 
     = Haml::Engine.new(File.read("views/layouts/_footer.haml")).render

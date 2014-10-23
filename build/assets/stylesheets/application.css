@@ -7649,7 +7649,12 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 
 .dialog {
   position: relative;
-  background-color: #fff; }
+  background-color: #fff;
+  -webkit-animation-duration: 0.66s;
+  -moz-animation-duration: 0.66s;
+  -ms-animation-duration: 0.66s;
+  -o-animation-duration: 0.66s;
+  animation-duration: 0.66s; }
 
 .dialog_close {
   top: 2rem;
@@ -7759,6 +7764,9 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 @media all and (min-width: 740px) and (max-width: 1099px) {
   body {
     padding-top: 0 !important; } }
+.dbg {
+  background-color: red; }
+
 .header {
   position: absolute;
   z-index: 999;
@@ -8254,5 +8262,8 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
   .arcticmodal-container_i2 > .ctn {
     min-width: 660px;
     max-width: 1100px; } }
+
+.arcticmodal-loading, .arcticmodal-error {
+  display: none; }
 
 /*# sourceMappingURL=application.css.map */

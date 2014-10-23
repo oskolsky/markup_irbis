@@ -33,14 +33,20 @@ App.Router = Backbone.Router.extend({
   },
 
   services: function() {
+    this.removeLinkCurrent();
+    this.addLinkCurrent('services');
     this.scrollTo({
-      anchor: '#services',
+      anchor: '#services', 
       offset: 300
-    });    
+    });
   },
 
   works: function() {
-    this.scrollTo({anchor: '#works'});
+    this.removeLinkCurrent();
+    this.addLinkCurrent('works');
+    this.scrollTo({
+      anchor: '#services'
+    });
   },
 
   worksShow: function(id) {
@@ -50,15 +56,21 @@ App.Router = Backbone.Router.extend({
   },
 
   blog: function() {
+    this.removeLinkCurrent();
+    this.addLinkCurrent('blog');
     this.scrollTo({
-      anchor: '#blog',
+      anchor: '#blog', 
       offset: -1
-  });
+    });
   },
 
   contacts: function() {
-    this.scrollTo({anchor: '#contacts'});
-    setContactsHeight();
+    this.removeLinkCurrent();
+    this.addLinkCurrent('contacts');    
+    this.scrollTo({
+      anchor: '#contacts', 
+      offset: -1
+    });
   },
 
   order: function() {
@@ -84,10 +96,24 @@ App.Router = Backbone.Router.extend({
     return false;
   },
 
+  removeLinkCurrent: function() {
+    $('.menu_i_a__current').removeClass('menu_i_a__current');
+  },
+
+  addLinkCurrent: function(hash) {
+    $('.menu_i_a[href="/#/' + hash + '/"]').addClass('menu_i_a__current');
+  },
+
   scrollTo: function(options) {
-    options.offset = $('.header_inner').outerHeight() + options.offset || $('.header_inner').outerHeight();
-    var destination = $(options.anchor).offset().top - options.offset;
-    $('html, body').animate({scrollTop: destination}, 300);
+
+    console.log(options);
+
+    options.offset = options.offset || 0;
+
+    var headerH = $('.header_inner').outerHeight();
+    var destination = $(options.anchor).offset().top - (options.offset + headerH);
+
+    $('html, body').animate({scrollTop: destination}, 500);
   }
 
 });

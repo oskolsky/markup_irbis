@@ -16,10 +16,10 @@ $.arcticmodal('setDefault', {
     }
   },
   openEffect: {
-    speed: 200
+    speed: 100
   },
   closeEffect: {
-    speed: 200
+    speed: 100
   }
 });
 

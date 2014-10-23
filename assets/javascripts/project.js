@@ -34,6 +34,13 @@ $(function() {
   // $('.section.section__landing').parallax('50%', 0.5);
 
   //
+  // .. Click on contacts item menu
+  //
+  $('.menu_i_a[href="/#/contacts/"]').on('click', function() {
+    setContactsHeight();    
+  });
+
+  //
   // .. 2Gis map init
   //
   var map;
@@ -113,9 +120,38 @@ $(function() {
     //
     // .. о_О Reset contacts block O_o
     //
-    if ($(window).scrollTop() < ($(document).height() - $(window).height() * 2) && $('#contacts').hasClass('js-section-changed')) {
-      $('#contacts').css({height: ''}).removeClass('js-section-changed');
-    }
+    if ($(window).scrollTop() < ($(document).height() - $(window).height() * 2) && $('.section__contacts').hasClass('js-section-changed')) {
+      $('.section__contacts').css({height: ''}).removeClass('js-section-changed');
+    }    
+
+    //
+    // .. Page on scroll
+    //
+    var
+        services = $('#services').offset().top,
+        works    = $('#works').offset().top,
+        blog     = $('#blog').offset().top,
+        contacts = $('#contacts').offset().top,
+        headerH = $('.header_inner').outerHeight()
+        windowOffsetTop = $(window).scrollTop();
+
+     if (windowOffsetTop == ($(document).height() - $(window).height())) {
+
+        location.href = '/#/contacts/';
+
+      } else if ((windowOffsetTop + headerH) >= services && (windowOffsetTop + headerH) < works) {
+
+        location.href = '/#/services/';
+        
+      } else if ((windowOffsetTop + headerH) >= works && (windowOffsetTop + headerH) < blog) {
+
+        location.href = '/#/works/';
+        
+      } else if ((windowOffsetTop + headerH) >= blog && (windowOffsetTop + headerH) < contacts) {
+
+        location.href = '/#/blog/';
+
+      }    
 
   });
 
@@ -185,8 +221,8 @@ function setContactsHeight() {
   if (window.matchMedia) {
     if (matchMedia('all and (min-width: ' + config.matchMedia.desktop.minWidth + 'px)').matches) {
       var height = getContentHeight();
-      $('#contacts').height(height);
-      setTimeout("$('#contacts').addClass('js-section-changed');", 1000)
+      $('.section__contacts').height(height);
+      $('.section__contacts').addClass('js-section-changed');
     }
   }
 }
@@ -195,7 +231,7 @@ function getContentHeight() {
   if (window.matchMedia) {
     if (matchMedia('all and (min-width: ' + config.matchMedia.desktop.minWidth + 'px)').matches) {
       var
-        headerH = $('#header').outerHeight(),
+        headerH = $('.header_inner').outerHeight(),
         footerH = $('#footer').outerHeight(),
         windowH = $(window).outerHeight();
 
