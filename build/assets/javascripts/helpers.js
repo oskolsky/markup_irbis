@@ -88,15 +88,10 @@ function getBrowserScrollSize() {
 $(document).on('click touchstart', '[data-scroll]', function() {
   var
     anchor = $(this).data('scroll'),
-    offset = $(this).data('offset') || $('#header').outerHeight(),
-    speed = $(this).data('speed') || 0,
+    offset = $(this).data('offset') || $('.header_inner').outerHeight(),
     destination = $(anchor).offset().top - offset;
 
-  if (speed) {
-    $('html, body').animate({scrollTop: destination}, speed);
-  } else {
-    $('html, body').animate({scrollTop: destination}, $(document).height() / 10);
-  }
+  $('html, body').animate({scrollTop: destination}, 300);
   
   return false;  
 });

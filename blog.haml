@@ -3,7 +3,7 @@
   %head
     %title Blog / Irbis
     = Haml::Engine.new(File.read("views/layouts/_head.haml")).render
-    %script{src: "http://maps.api.2gis.ru/2.0/loader.js", data: {id: "dgLoader"}}
+    %script{src: "http://api-maps.yandex.ru/2.1/?lang=ru_RU", data: {id: "dgLoader"}}
 
   %body#page.page
     = Haml::Engine.new(File.read("views/common/_alerts.haml")).render

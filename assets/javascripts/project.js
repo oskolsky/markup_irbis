@@ -15,7 +15,7 @@ $(function() {
   // .. Toggle menu
   //
   $('.js-nav-toggle').on('click', function() {
-    var $el = $('.nav');    
+    var $el = $('.nav');
     if ($el.is(':hidden')) {
       $el.slideDown();
       $(this).find('.ico').removeClass('ico__nav').addClass('ico__close');
@@ -37,25 +37,8 @@ $(function() {
   // .. Click on contacts item menu
   //
   $('.menu_i_a[href="/#/contacts/"]').on('click', function() {
-    setContactsHeight();    
+    setContactsHeight()
   });
-
-  //
-  // .. 2Gis map init
-  //
-  var map;
-
-  DG.then(function() {
-    map = DG.map('map', {
-      center: [59.87, 30.31],
-      zoom: 13,
-      fullscreenControl: false,
-      zoomControl: false,
-      scrollWheelZoom: false,
-      touchZoom: false,
-      trackResize: true
-    });
-  }); 
 
   //
   // .. Contacts change background
@@ -120,38 +103,54 @@ $(function() {
     //
     // .. о_О Reset contacts block O_o
     //
-    if ($(window).scrollTop() < ($(document).height() - $(window).height() * 2) && $('.section__contacts').hasClass('js-section-changed')) {
-      $('.section__contacts').css({height: ''}).removeClass('js-section-changed');
-    }    
+    setTimeout(function() {
+      if ($(window).scrollTop() < ($(document).height() - $(window).height() * 2) && $('.section__contacts').hasClass('js-section-changed')) {
+        $('.section__contacts').css({height: ''}).removeClass('js-section-changed');
+      }    
+    }, 300);
 
     //
     // .. Page on scroll
     //
     var
-        services = $('#services').offset().top,
-        works    = $('#works').offset().top,
-        blog     = $('#blog').offset().top,
-        contacts = $('#contacts').offset().top,
-        headerH = $('.header_inner').outerHeight()
-        windowOffsetTop = $(window).scrollTop();
+      services = $('#services').offset().top - 300,
+      works    = $('#works').offset().top,
+      blog     = $('#blog').offset().top,
+      contacts = $('#contacts').offset().top,
+      headerH = $('.header_inner').outerHeight()
+      windowOffsetTop = $(window).scrollTop();
 
-     if (windowOffsetTop == ($(document).height() - $(window).height())) {
+     
+    if (windowOffsetTop < services) {
 
-        location.href = '/#/contacts/';
+      location.href = '/#/';
+      $('.menu').find('.menu_i_a__current').removeClass('menu_i_a__current');
 
-      } else if ((windowOffsetTop + headerH) >= services && (windowOffsetTop + headerH) < works) {
+    } else if (windowOffsetTop == ($(document).height() - $(window).height())) {
 
-        location.href = '/#/services/';
-        
-      } else if ((windowOffsetTop + headerH) >= works && (windowOffsetTop + headerH) < blog) {
+      location.href = '/#/contacts/';
+      $('.menu').find('.menu_i_a__current').removeClass('menu_i_a__current');
+      $('.menu').find('.menu_i_a[href="/#/contacts/"]').addClass('menu_i_a__current');
 
-        location.href = '/#/works/';
-        
-      } else if ((windowOffsetTop + headerH) >= blog && (windowOffsetTop + headerH) < contacts) {
+    } else if ((windowOffsetTop + headerH) >= services && (windowOffsetTop + headerH) < works) {
 
-        location.href = '/#/blog/';
+      location.href = '/#/services/';
+      $('.menu').find('.menu_i_a__current').removeClass('menu_i_a__current');
+      $('.menu').find('.menu_i_a[href="/#/services/"]').addClass('menu_i_a__current');
+      
+    } else if ((windowOffsetTop + headerH) >= works && (windowOffsetTop + headerH) < blog) {
 
-      }    
+      location.href = '/#/works/';
+      $('.menu').find('.menu_i_a__current').removeClass('menu_i_a__current');
+      $('.menu').find('.menu_i_a[href="/#/works/"]').addClass('menu_i_a__current');
+      
+    } else if ((windowOffsetTop + headerH) >= blog && (windowOffsetTop + headerH) < contacts) {
+
+      location.href = '/#/blog/';
+      $('.menu').find('.menu_i_a__current').removeClass('menu_i_a__current');
+      $('.menu').find('.menu_i_a[href="/#/blog/"]').addClass('menu_i_a__current');
+
+    }    
 
   });
 
@@ -176,6 +175,12 @@ $(function() {
 $(window).load(function() {
 
   //
+  // .. HASH
+  //
+  var hash = location.hash;  
+  $('.menu_i_a[href="/' + hash + '"]').trigger('click');
+
+  //
   // .. Set height map block
   //
   setMapHeight();
@@ -188,6 +193,23 @@ $(window).load(function() {
       itemSelector: '.works_i'
     });  
   });
+
+  //
+  // .. Map
+  //
+  ymaps.ready(init);
+    
+  var myMap;
+
+  function init() { 
+    myMap = new ymaps.Map('map', {
+      center: [59.87, 30.31],
+      zoom: 13,
+      controls: []
+    });
+  }
+
+  myMap.behaviors.disable('scrollZoom');
 
 });
 
