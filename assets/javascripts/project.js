@@ -202,14 +202,19 @@ $(window).load(function() {
   var myMap;
 
   function init() { 
+
     myMap = new ymaps.Map('map', {
       center: [59.87, 30.31],
       zoom: 13,
       controls: []
     });
-  }
 
-  myMap.behaviors.disable('scrollZoom');
+    myMap.controls.add('zoomControl', {
+      size: 'small'
+    });
+
+    myMap.behaviors.disable('scrollZoom');
+  }
 
 });
 
